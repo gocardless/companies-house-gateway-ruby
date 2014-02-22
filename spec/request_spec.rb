@@ -23,7 +23,15 @@ describe CompaniesHouseGateway::Request do
     let(:xsd) { Nokogiri::XML::Schema(xml_schema) }
 
     it "generates a valid XML request" do
-      xsd.validate(request_xml).should be_empty
+      xsd.validate(request_xml).should == []
+    end
+
+    context "with an email address" do
+      before { config[:email] = "grey@gocardless.com" }
+
+      it "generates a valid XML request" do
+        xsd.validate(request_xml).should == []
+      end
     end
   end
 

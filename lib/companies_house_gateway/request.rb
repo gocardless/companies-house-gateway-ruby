@@ -83,6 +83,7 @@ module CompaniesHouseGateway
             xml.Value create_digest(transaction_id)
           end
         end
+        xml.EmailAddress @config[:email] if @config[:email]
       end
     end
 
