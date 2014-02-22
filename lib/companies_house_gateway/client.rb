@@ -9,6 +9,16 @@ module CompaniesHouseGateway
       request.perform(*args)
     end
 
+    def name_search(*args)
+      check = Checks::NameSearch.new(self)
+      check.perform(*args)
+    end
+
+    def number_search(*args)
+      check = Checks::NumberSearch.new(self)
+      check.perform(*args)
+    end
+
     def config
       @config
     end

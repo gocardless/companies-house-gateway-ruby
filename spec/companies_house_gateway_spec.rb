@@ -34,4 +34,15 @@ describe CompaniesHouseGateway do
       CompaniesHouseGateway.perform_check(data)
     end
   end
+
+  describe '#name_search' do
+    before { configure_companies_house_gateway }
+    let(:data) { "data" }
+
+    it "delegates to the client" do
+      CompaniesHouseGateway::Client.any_instance.
+        should_receive(:name_search).with(data)
+      CompaniesHouseGateway.name_search(data)
+    end
+  end
 end

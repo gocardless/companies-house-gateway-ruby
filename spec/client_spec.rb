@@ -37,4 +37,24 @@ describe CompaniesHouseGateway::Client do
       client.perform_check(check_data)
     end
   end
+
+  describe "#name_search" do
+    subject(:name_search) { client.name_search(check_data) }
+
+    it "delegates to an instance of NameSearch" do
+      expect_any_instance_of(CompaniesHouseGateway::Checks::NameSearch).
+        to receive(:perform).once
+      client.name_search(check_data)
+    end
+  end
+
+  describe "#number_search" do
+    subject(:number_search) { client.number_search(check_data) }
+
+    it "delegates to an instance of NumberSearch" do
+      expect_any_instance_of(CompaniesHouseGateway::Checks::NumberSearch).
+        to receive(:perform).once
+      client.number_search(check_data)
+    end
+  end
 end

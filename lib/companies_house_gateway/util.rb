@@ -12,5 +12,9 @@ module CompaniesHouseGateway
         tr("-", "_").
         downcase
     end
+
+    def demodulize(str)
+      str.to_s.split('::').last
+    end
   end
 end
