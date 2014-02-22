@@ -4,9 +4,15 @@ module CompaniesHouseGateway
       @config = (config || CompaniesHouseGateway.config).clone
     end
 
-    def perform_check(check_data)
+    def perform_check(*args)
       request = Request.new(connection, @config)
-      request.perform(check_data)
+      request.perform(*args)
+    end
+
+    # TODO: delete me!!
+    def build_request_xml(*args)
+      request = Request.new(connection, @config)
+      request.build_request_xml(*args)
     end
 
     def config

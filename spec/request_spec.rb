@@ -10,23 +10,26 @@ describe CompaniesHouseGateway::Request do
   let(:response_hash) { { status: status, body: body } }
   let(:status) { 200 }
   let(:body) { "<Results><Errors/></Results>" }
-  before { stub_request(:get, config[:api_endpoint]).to_return(response_hash) }
+  before { stub_request(:post, config[:api_endpoint]).to_return(response_hash) }
 
-  let(:check_data) { "pending" }
+  let(:request_type) { :name_search }
+  let(:request_data) { {} }
 
   describe '#build_request_xml' do
-    subject(:build_request_xml) { request.build_request_xml(check_data).to_s }
+    subject(:build_request_xml) do
+      request.build_request_xml(request_type, request_data).to_s
+    end
     let(:request_xml) { load_fixture('request.xml') }
 
     pending { should == request_xml }
   end
 
   describe "#perform" do
-    subject(:perform_check) { request.perform(check_data) }
+    subject(:perform_check) { request.perform(request_type, request_data) }
 
     it "makes a get request" do
       perform_check
-      a_request(:get, config[:api_endpoint]).should have_been_made
+      a_request(:post, config[:api_endpoint]).should have_been_made
     end
 
     context "when the config[:raw] is true" do

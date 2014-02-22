@@ -3,7 +3,7 @@ module CompaniesHouseGateway
     extend self
     # String helper
     def camelize(str)
-      str.split('_').map(&:capitalize).join
+      str.to_s.split('_').map(&:capitalize).join
     end
 
     def underscore(str)

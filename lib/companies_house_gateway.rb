@@ -2,6 +2,7 @@ require 'faraday_middleware'
 require 'nokogiri'
 
 require 'companies_house_gateway/version'
+require 'companies_house_gateway/constants'
 require 'companies_house_gateway/util'
 require 'companies_house_gateway/config'
 require 'companies_house_gateway/request'
