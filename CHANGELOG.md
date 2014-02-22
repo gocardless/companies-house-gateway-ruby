@@ -1,3 +1,7 @@
+## 0.1.1 - February 22, 2014
+
+- Add company_appointments class
+
 ## 0.1.0 - February 22, 2014
 
 - Add name_search and number_search classes

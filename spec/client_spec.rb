@@ -57,4 +57,15 @@ describe CompaniesHouseGateway::Client do
       client.number_search(check_data)
     end
   end
+
+  describe "#company_appointments" do
+    subject(:company_appointments) { client.company_appointments(check_data) }
+
+    it "delegates to an instance of CompanyAppointments" do
+      expect_any_instance_of(
+        CompaniesHouseGateway::Checks::CompanyAppointments).
+        to receive(:perform).once
+      client.company_appointments(check_data)
+    end
+  end
 end

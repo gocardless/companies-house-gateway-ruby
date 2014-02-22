@@ -45,4 +45,15 @@ describe CompaniesHouseGateway do
       CompaniesHouseGateway.name_search(data)
     end
   end
+
+  describe '#company_appointments' do
+    before { configure_companies_house_gateway }
+    let(:data) { "data" }
+
+    it "delegates to the client" do
+      CompaniesHouseGateway::Client.any_instance.
+        should_receive(:company_appointments).with(data)
+      CompaniesHouseGateway.company_appointments(data)
+    end
+  end
 end

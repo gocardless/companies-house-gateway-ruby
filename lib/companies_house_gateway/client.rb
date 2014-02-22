@@ -19,6 +19,11 @@ module CompaniesHouseGateway
       check.perform(*args)
     end
 
+    def company_appointments(*args)
+      check = Checks::CompanyAppointments.new(self)
+      check.perform(*args)
+    end
+
     def config
       @config
     end

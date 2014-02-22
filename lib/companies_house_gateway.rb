@@ -13,6 +13,7 @@ require 'companies_house_gateway/errors/companies_house_gateway_error'
 require 'companies_house_gateway/checks/check'
 require 'companies_house_gateway/checks/name_search'
 require 'companies_house_gateway/checks/number_search'
+require 'companies_house_gateway/checks/company_appointments'
 
 module CompaniesHouseGateway
   def self.configure(&block)
@@ -29,6 +30,10 @@ module CompaniesHouseGateway
 
   def self.number_search(*args)
     client.number_search(*args)
+  end
+
+  def self.company_appointments(*args)
+    client.company_appointments(*args)
   end
 
   # Require configuration before use
