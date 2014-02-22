@@ -1,45 +1,17 @@
 module CompaniesHouseGateway
   module Checks
     class NameSearch
-      REQUIRED_INPUTS = [:company_name, :data_set]
-      DEFAULT_INPUTS = {
-        data_set: "LIVE",
-        same_as: false,
-        search_rows: 20,
-        continuation_key: nil,
-        regression_key: nil,
-      }
-      ALLOWED_INPUTS = (DEFAULT_INPUTS.keys + REQUIRED_INPUTS).uniq
+      include Check
 
-      def initialize(client)
-        @client = client
-      end
+      required_input :company_name,
+                     :data_set
 
-      def perform(data = {})
-        data = DEFAULT_INPUTS.merge(data)
-        check_params(data)
-        check_type = Util.underscore(Util.demodulize(self.class))
-        @client.perform_check(check_type, data)
-      end
+      default_input  data_set: "LIVE",
+                     same_as: false,
+                     search_rows: 20,
+                     continuation_key: nil,
+                     regression_key: nil
 
-      private
-
-      def check_params(data)
-        REQUIRED_INPUTS.each do |param|
-          if data[param].nil?
-            msg = "#{Util.demodulize(self.class)} requires a #{param}"
-            raise CompaniesHouseGatewayError.new(msg)
-          end
-        end
-
-        data.keys.each do |param|
-          unless ALLOWED_INPUTS.include?(param)
-            msg = "#{Util.demodulize(self.class)} does not accept #{param}. " +
-                  "Only the following inputs are permitted: #{ALLOWED_INPUTS}"
-            raise CompaniesHouseGatewayError.new(msg)
-          end
-        end
-      end
     end
   end
 end

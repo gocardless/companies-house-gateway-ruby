@@ -10,6 +10,7 @@ require 'companies_house_gateway/client'
 
 require 'companies_house_gateway/errors/companies_house_gateway_error'
 
+require 'companies_house_gateway/checks/check'
 require 'companies_house_gateway/checks/name_search'
 require 'companies_house_gateway/checks/number_search'
 
