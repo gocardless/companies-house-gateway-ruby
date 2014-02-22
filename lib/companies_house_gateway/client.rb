@@ -9,12 +9,6 @@ module CompaniesHouseGateway
       request.perform(*args)
     end
 
-    # TODO: delete me!!
-    def build_request_xml(*args)
-      request = Request.new(connection, @config)
-      request.build_request_xml(*args)
-    end
-
     def config
       @config
     end
