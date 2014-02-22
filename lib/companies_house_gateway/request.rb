@@ -30,11 +30,12 @@ module CompaniesHouseGateway
 
       builder = Nokogiri::XML::Builder.new do |xml|
         xml.GovTalkMessage(header_namespace) do
-          xml.EnvelopeVersion "1.0"
+          xml.EnvelopeVersion "2.0"
           xml.Header do
             message_details(xml, request_type, transaction_id)
             authentication(xml, transaction_id)
           end
+          xml.GovTalkDetails
           xml.Body do
             request_body(xml, request_type, request_data)
           end
@@ -47,12 +48,12 @@ module CompaniesHouseGateway
 
     def header_namespace
       {
-        'xmlns'              => "http://www.govtalk.gov.uk/schemas/govtalk/govtalkheader",
+        'xmlns'              => "http://www.govtalk.gov.uk/CM/envelope",
         'xmlns:dsig'         => "http://www.w3.org/2000/09/xmldsig#",
-        'xmlns:gt'           => "http://www.govtalk.gov.uk/schemas/govtalk/core",
+        'xmlns:gt'           => "http://www.govtalk.gov.uk/CM/core",
         'xmlns:xsi'          => "http://www.w3.org/2001/XMLSchema-instance",
-        'xsi:schemaLocation' => "http://www.govtalk.gov.uk/schemas/govtalk/govtalkheader " +
-                                "http://xmlgw.companieshouse.gov.uk/v1-0/schema/Egov_ch.xsd"
+        'xsi:schemaLocation' => "http://www.govtalk.gov.uk/CM/envelope " +
+                                "http://xmlgw.companieshouse.gov.uk/v1-1/schema/Egov_ch-v2-0.xsd"
       }
     end
 
@@ -78,7 +79,7 @@ module CompaniesHouseGateway
         xml.IDAuthentication do
           xml.SenderID @config[:sender_id]
           xml.Authentication do
-            xml.Method "MD5SIGN"
+            xml.Method "CHMD5"
             xml.Value create_digest(transaction_id)
           end
         end

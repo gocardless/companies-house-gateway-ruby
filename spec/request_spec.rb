@@ -16,12 +16,15 @@ describe CompaniesHouseGateway::Request do
   let(:request_data) { {} }
 
   describe '#build_request_xml' do
-    subject(:build_request_xml) do
-      request.build_request_xml(request_type, request_data).to_s
+    subject(:request_xml) do
+      request.build_request_xml(request_type, request_data)
     end
-    let(:request_xml) { load_fixture('request.xml') }
+    let(:xml_schema) { load_fixture('request.xsd') }
+    let(:xsd) { Nokogiri::XML::Schema(xml_schema) }
 
-    pending { should == request_xml }
+    it "generates a valid XML request" do
+      xsd.validate(request_xml).should be_empty
+    end
   end
 
   describe "#perform" do
