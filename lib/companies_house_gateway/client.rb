@@ -9,23 +9,17 @@ module CompaniesHouseGateway
       request.perform(*args)
     end
 
-    def name_search(*args)
-      check = Checks::NameSearch.new(self)
-      check.perform(*args)
-    end
-
-    def number_search(*args)
-      check = Checks::NumberSearch.new(self)
-      check.perform(*args)
-    end
-
-    def company_appointments(*args)
-      check = Checks::CompanyAppointments.new(self)
-      check.perform(*args)
-    end
-
     def config
       @config
+    end
+
+    Constants::SUPPORTED_REQUESTS.each do |name|
+      class_eval <<-EOM
+        def #{Util.underscore(name)}(*args)
+          check = CompaniesHouseGateway::Checks.const_get(:#{name}).new(self)
+          check.perform(*args)
+        end
+      EOM
     end
 
     private

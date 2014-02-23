@@ -1,9 +1,18 @@
 require 'spec_helper'
 
+shared_examples "it delegates to the check" do |method_name|
+  it "delegates #{method_name} to " +
+     "#{CompaniesHouseGateway::Util.camelize(method_name)}" do
+    expect_any_instance_of(CompaniesHouseGateway::Checks.
+      const_get(CompaniesHouseGateway::Util.camelize(method_name))).
+      to receive(:perform).once
+    client.send(method_name, {})
+  end
+end
+
 describe CompaniesHouseGateway::Client do
   let(:client) { CompaniesHouseGateway::Client.new(config) }
   let(:config) { CompaniesHouseGateway::Config.new }
-  let(:check_data) { {} }
 
   describe "#new" do
     context "without a config" do
@@ -29,43 +38,15 @@ describe CompaniesHouseGateway::Client do
   end
 
   describe "#perform_check" do
-    subject(:perform_check) { client.perform_check(check_data) }
-
     it "delegates to an instance of Request" do
       expect_any_instance_of(CompaniesHouseGateway::Request).
         to receive(:perform).once
-      client.perform_check(check_data)
+      client.perform_check({})
     end
   end
 
-  describe "#name_search" do
-    subject(:name_search) { client.name_search(check_data) }
-
-    it "delegates to an instance of NameSearch" do
-      expect_any_instance_of(CompaniesHouseGateway::Checks::NameSearch).
-        to receive(:perform).once
-      client.name_search(check_data)
-    end
-  end
-
-  describe "#number_search" do
-    subject(:number_search) { client.number_search(check_data) }
-
-    it "delegates to an instance of NumberSearch" do
-      expect_any_instance_of(CompaniesHouseGateway::Checks::NumberSearch).
-        to receive(:perform).once
-      client.number_search(check_data)
-    end
-  end
-
-  describe "#company_appointments" do
-    subject(:company_appointments) { client.company_appointments(check_data) }
-
-    it "delegates to an instance of CompanyAppointments" do
-      expect_any_instance_of(
-        CompaniesHouseGateway::Checks::CompanyAppointments).
-        to receive(:perform).once
-      client.company_appointments(check_data)
-    end
-  end
+  it_behaves_like "it delegates to the check", :name_search
+  it_behaves_like "it delegates to the check", :number_search
+  it_behaves_like "it delegates to the check", :company_appointments
+  it_behaves_like "it delegates to the check", :company_details
 end

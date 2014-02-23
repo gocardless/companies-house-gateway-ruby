@@ -1,5 +1,16 @@
 require 'spec_helper'
 
+shared_examples "it delegates to the client" do |method_name|
+  before { configure_companies_house_gateway }
+  let(:data) { "data" }
+
+  it "delegates #{method_name} to the client" do
+    CompaniesHouseGateway::Client.any_instance.
+      should_receive(method_name).with(data)
+    CompaniesHouseGateway.send(method_name, data)
+  end
+end
+
 describe CompaniesHouseGateway do
   before { CompaniesHouseGateway.instance_variable_set(:@config, nil) }
 
@@ -24,36 +35,9 @@ describe CompaniesHouseGateway do
     end
   end
 
-  describe '#perform_check' do
-    before { configure_companies_house_gateway }
-    let(:data) { "data" }
-
-    it "delegates to the client" do
-      CompaniesHouseGateway::Client.any_instance.
-        should_receive(:perform_check).with(data)
-      CompaniesHouseGateway.perform_check(data)
-    end
-  end
-
-  describe '#name_search' do
-    before { configure_companies_house_gateway }
-    let(:data) { "data" }
-
-    it "delegates to the client" do
-      CompaniesHouseGateway::Client.any_instance.
-        should_receive(:name_search).with(data)
-      CompaniesHouseGateway.name_search(data)
-    end
-  end
-
-  describe '#company_appointments' do
-    before { configure_companies_house_gateway }
-    let(:data) { "data" }
-
-    it "delegates to the client" do
-      CompaniesHouseGateway::Client.any_instance.
-        should_receive(:company_appointments).with(data)
-      CompaniesHouseGateway.company_appointments(data)
-    end
-  end
+  it_behaves_like "it delegates to the client", :perform_check
+  it_behaves_like "it delegates to the client", :name_search
+  it_behaves_like "it delegates to the client", :number_search
+  it_behaves_like "it delegates to the client", :company_appointments
+  it_behaves_like "it delegates to the client", :company_details
 end
