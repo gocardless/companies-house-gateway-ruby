@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2005 rel. 3 U (http://www.altova.com) by Companies House (Companies House) -->
+<!-- Companies House XML Gateway Schema -->
+<!-- $Id: CompanyDetails-v2-1.xsd,v 1.3 2009-03-24 10:03:11 ecrockford Exp $ -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:chg="http://xmlgwdev.companieshouse.gov.uk" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:include schemaLocation="chbase.xsd"/>
+  <xs:element name="CompanyDetails">
+    <xs:annotation>
+      <xs:documentation>Company Details Information</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="CompanyName"/>
+        <xs:element ref="CompanyNumber"/>
+        <xs:element name="HasInconsistencies" type="xs:boolean" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>The Company data has inconsistencies</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element ref="RegAddress"/>
+        <xs:element ref="CompanyCategory"/>
+        <xs:element ref="CompanyStatus"/>
+        <xs:element ref="CountryOfOrigin"/>
+        <xs:element ref="RegistrationDate" minOccurs="0"/>
+        <xs:element name="RegDateType">
+          <xs:annotation>
+            <xs:documentation>Whether the Company has a Registration or Incorporation Date</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element ref="DissolutionDate" minOccurs="0"/>
+        <xs:element ref="IncorporationDate" minOccurs="0"/>
+        <xs:element ref="ClosureDate" minOccurs="0"/>
+        <xs:element ref="PreviousNames" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="Accounts">
+          <xs:annotation>
+            <xs:documentation>Container for Annual Accounts Information</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="AccountRefDate" minOccurs="0"/>
+              <xs:element ref="NextDueDate" minOccurs="0"/>
+              <xs:element ref="Overdue"/>
+              <xs:element ref="LastMadeUpDate" minOccurs="0"/>
+              <xs:element ref="AccountCategory" minOccurs="0"/>
+              <xs:element ref="DocumentAvailable"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Returns">
+          <xs:annotation>
+            <xs:documentation>Container for Annual Return Information</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="NextDueDate" minOccurs="0"/>
+              <xs:element ref="Overdue"/>
+              <xs:element ref="LastMadeUpDate" minOccurs="0"/>
+              <xs:element ref="DocumentAvailable"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Mortgages" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Container for Mortgage Information</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="MortgageInd"/>
+              <xs:element ref="NumMortCharges"/>
+              <xs:element ref="NumMortOutstanding"/>
+              <xs:element ref="NumMortPartSatisfied"/>
+              <xs:element ref="NumMortSatisfied"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element ref="SICCodes"/>
+        <xs:element ref="LastFullMemDate" minOccurs="0"/>
+        <xs:element ref="LastBulkShareDate" minOccurs="0"/>
+        <xs:element ref="WeededDate" minOccurs="0"/>
+        <xs:element ref="HasUKestablishment"/>
+        <xs:element ref="HasAppointments"/>
+        <xs:element ref="InLiquidation"/>
+        <xs:element name="LimitedPartnerships" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Container for  Limited Partnerships Specific Information</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="NumGenPartners"/>
+              <xs:element ref="NumLimPartners"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyDetailsRequest">
+    <xs:annotation>
+      <xs:documentation>Company Details Request</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="CompanyNumber"/>
+        <xs:element ref="GiveMortTotals" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

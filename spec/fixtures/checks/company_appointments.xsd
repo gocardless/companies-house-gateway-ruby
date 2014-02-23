@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Companies House XML Gateway Schema -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:include schemaLocation="chbase.xsd"/>
+  <xs:element name="CompanyAppointments">
+    <xs:annotation>
+      <xs:documentation>Company Appointments Search Result</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="CompanyName"/>
+        <xs:element ref="CompanyNumber"/>
+        <xs:element name="HasInconsistencies" type="xs:boolean" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Indicates that the list of officers contain inconsistencies</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element ref="NumCurrentAppt"/>
+        <xs:element ref="NumResignedAppt"/>
+        <xs:element ref="SearchRows"/>
+        <xs:element ref="ContinuationKey" minOccurs="0"/>
+        <xs:element ref="CoAppt" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyAppointmentsRequest">
+    <xs:annotation>
+      <xs:documentation>Company Appointments Request</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="CompanyName"/>
+        <xs:element ref="CompanyNumber"/>
+        <xs:element ref="IncludeResignedInd" minOccurs="0"/>
+        <xs:element ref="UserReference"/>
+        <xs:element ref="ContinuationKey" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Specification of a ContinuationKey will override any other request parameters rendering them ineffective</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CoAppt" type="ApptCPLXType">
+    <xs:annotation>
+      <xs:documentation>A single company appointment</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="ApptCPLXType">
+    <xs:annotation>
+      <xs:documentation>Company Appointment Complex Type</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Person" type="PersonAppointment"/>
+      <xs:element ref="NumAppointments"/>
+      <xs:element ref="NumAppInd" minOccurs="0"/>
+      <xs:element ref="AppointmentType"/>
+      <xs:element ref="AppointmentStatus"/>
+      <xs:element ref="ApptDatePrefix" minOccurs="0"/>
+      <xs:element ref="AppointmentDate"/>
+      <xs:element ref="ResignationDate" minOccurs="0"/>
+      <xs:element ref="Occupation" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PersonAppointment">
+    <xs:complexContent>
+      <xs:extension base="PersonType">
+        <xs:sequence>
+          <xs:element ref="PersonID"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

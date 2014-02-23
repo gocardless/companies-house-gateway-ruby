@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Companies House XML Gateway Schema -->
+<!-- $Id: Mortgages.xsd,v 1.8 2002-10-24 15:10:09 www Exp $ -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:include schemaLocation="chbase.xsd"/>
+  <xs:element name="MortgagesRequest">
+    <xs:annotation>
+      <xs:documentation>Request for Mortgage Charges for Compay</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="CompanyName"/>
+        <xs:element ref="CompanyNumber"/>
+        <xs:element ref="UserReference"/>
+        <xs:element ref="SatisfiedChargesInd" minOccurs="0"/>
+        <xs:element ref="StartDate" minOccurs="0"/>
+        <xs:element ref="EndDate" minOccurs="0"/>
+        <xs:element ref="ContinuationKey" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Specification of a ContinuationKey will override any other request parameters rendering them ineffective</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Mortgages">
+    <xs:annotation>
+      <xs:documentation>Morgage Charge Search Results</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="CompanyNumber"/>
+        <xs:element ref="CompanyName"/>
+        <xs:element ref="NumMortCharges"/>
+        <xs:element ref="NumMortOutstanding"/>
+        <xs:element ref="NumMortPartSatisfied"/>
+        <xs:element ref="NumMortSatisfied"/>
+        <xs:element ref="SearchRows"/>
+        <xs:element ref="ContinuationKey" minOccurs="0"/>
+        <xs:element ref="Charge" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Charge" type="ChargeCPLXType"/>
+  <xs:complexType name="ChargeCPLXType">
+    <xs:sequence>
+      <xs:element ref="ChargeNumber"/>
+      <xs:element ref="Description" maxOccurs="unbounded"/>
+      <xs:element ref="CreationDate"/>
+      <xs:element ref="RegistrationDate"/>
+      <xs:element ref="ChargeSatisfied"/>
+      <xs:element ref="PersonEntChgName" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element ref="AlterationToChgInd" minOccurs="0"/>
+      <xs:element ref="DetailsOnFicheInd" minOccurs="0"/>
+      <xs:element ref="ReceiverAptdInd" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -57,15 +57,6 @@ module CompaniesHouseGateway
       }
     end
 
-    def request_namespace(request_type)
-      {
-        'xmlns'              => "http://xmlgw.companieshouse.gov.uk/v1-0",
-        'xmlns:xsi'          => "http://www.w3.org/2001/XMLSchema-instance",
-        'xsi:schemaLocation' => "http://xmlgw.companieshouse.gov.uk/v1-0/schema " +
-                                "http://xmlgw.companieshouse.gov.uk/v1-0/schema/#{request_type}.xsd"
-      }
-    end
-
     def message_details(xml, request_type, transaction_id)
       xml.MessageDetails do
         xml.Class request_type
@@ -96,6 +87,14 @@ module CompaniesHouseGateway
           end
         end
       end
+    end
+
+    def request_namespace(request_type)
+      {
+        'xmlns:xsi'          => "http://www.w3.org/2001/XMLSchema-instance",
+        'xsi:schemaLocation' => "http://xmlgw.companieshouse.gov.uk/v1-0/schema " +
+                                "http://xmlgw.companieshouse.gov.uk/v1-0/schema/#{request_type}.xsd"
+      }
     end
 
     def create_digest(transaction_id)

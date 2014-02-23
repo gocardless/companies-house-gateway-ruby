@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by Edwin Crockford (Companies House) -->
+<!-- Companies House XML Gateway Schema -->
+<!-- $Id: NameSearch.xsd,v 1.8 2002-10-24 15:10:09 www Exp $ -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:include schemaLocation="chbase.xsd"/>
+  <xs:element name="NameSearchRequest">
+    <xs:annotation>
+      <xs:documentation>Name Search Request</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="CompanyName"/>
+        <xs:element ref="DataSet"/>
+
+              <xs:element name="SameAs" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>Request a "Same as another incorporated company name" search instead of the standard alphanumeric search</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+
+        <xs:element ref="SearchRows" minOccurs="0"/>
+        <xs:element ref="ContinuationKey" minOccurs="0"/>
+        <xs:element ref="RegressionKey" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NameSearch">
+    <xs:annotation>
+      <xs:documentation>Name SearchResult</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ContinuationKey"/>
+        <xs:element ref="RegressionKey"/>
+        <xs:element ref="SearchRows"/>
+        <xs:element ref="CoSearchItem" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

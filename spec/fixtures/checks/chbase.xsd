@@ -1,0 +1,1037 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Companies House XML Gateway Schema - Base Types-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="CompanyName">
+    <xs:annotation>
+      <xs:documentation>The Registered Company Name</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="160"/>
+        <xs:whiteSpace value="preserve"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="CompanyNumber">
+    <xs:annotation>
+      <xs:documentation>The company registration number</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="8"/>
+        <xs:maxLength value="8"/>
+        <xs:whiteSpace value="collapse"/>
+        <xs:pattern value="[A-Z0-9]{8,8}"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="PartialCompanyNumber">
+    <xs:annotation>
+      <xs:documentation>Company Number used for number searching</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="8"/>
+        <xs:whiteSpace value="collapse"/>
+        <xs:pattern value="[A-Z0-9]{1,8}[*]{0,1}"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="MortgageInd">
+    <xs:annotation>
+      <xs:documentation>Gives Mortgage Register Indication</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="2"/>
+        <xs:maxLength value="5"/>
+        <xs:whiteSpace value="collapse"/>
+        <xs:enumeration value="NO">
+          <xs:annotation>
+            <xs:documentation>No charges registered</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="LT300">
+          <xs:annotation>
+            <xs:documentation>Less than 300 charges registered</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="GE300">
+          <xs:annotation>
+            <xs:documentation>300 or more charges registered</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="AddressLine">
+    <xs:annotation>
+      <xs:documentation>A Single Address Line</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="0"/>
+        <xs:maxLength value="64"/>
+        <xs:whiteSpace value="preserve"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="RegAddress" type="RegAddressType">
+    <xs:annotation>
+      <xs:documentation>Company Registered Address</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="RegAddressType">
+    <xs:annotation>
+      <xs:documentation>Registered address with up to 5 address lines + care of name</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="CareOfName" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Care of Name</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="0"/>
+            <xs:maxLength value="100"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="POBox" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Optional Post Office Box number</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:sequence minOccurs="2" maxOccurs="6">
+        <xs:element ref="AddressLine"/>
+      </xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SicText">
+    <xs:annotation>
+      <xs:documentation>Single SIC code Text String</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="160"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="SICCodes" type="SicCodesType">
+    <xs:annotation>
+      <xs:documentation>Set of Sec Codes</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="SicCodesType">
+    <xs:annotation>
+      <xs:documentation>Set of SIC Text Strings (maximum 4)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence maxOccurs="4">
+      <xs:element ref="SicText"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompanyCategory">
+    <xs:annotation>
+      <xs:documentation>Type of Company</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="2"/>
+        <xs:maxLength value="160"/>
+        <xs:whiteSpace value="preserve"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="CompanyStatus">
+    <xs:annotation>
+      <xs:documentation>The status of the company</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="DissolutionDate">
+    <xs:annotation>
+      <xs:documentation>Date of Dissolution of Company</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:date">
+        <xs:whiteSpace value="collapse"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ClosureDate">
+    <xs:annotation>
+      <xs:documentation>Date of Closure of Company</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:date">
+        <xs:whiteSpace value="collapse"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="IncorporationDate">
+    <xs:annotation>
+      <xs:documentation>Date of Incorporation of Company</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:date">
+        <xs:whiteSpace value="collapse"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="RegistrationDate">
+    <xs:annotation>
+      <xs:documentation>Date of Registration of Company/charge/person</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:date">
+        <xs:whiteSpace value="collapse"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="CONDate">
+    <xs:annotation>
+      <xs:documentation>Date of last Change of Name</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:date">
+        <xs:whiteSpace value="collapse"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="PreviousNames" type="PreviousNamesType">
+    <xs:annotation>
+      <xs:documentation>Set of Previous Names for Company</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="PreviousNamesType">
+    <xs:annotation>
+      <xs:documentation>Set of previous names and dates changed</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element ref="CONDate"/>
+      <xs:element ref="CompanyName"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NextDueDate">
+    <xs:annotation>
+      <xs:documentation>The Next Due Date</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:date">
+        <xs:whiteSpace value="collapse"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="Overdue">
+    <xs:annotation>
+      <xs:documentation>Overdue Indication</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="NO">
+          <xs:annotation>
+            <xs:documentation>Document not overdue</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="OVERDUE">
+          <xs:annotation>
+            <xs:documentation>Document is overdue</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="PENDING">
+          <xs:annotation>
+            <xs:documentation>Document is pending</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="AccountCategory" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Type of Accounts</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AccountRefDate" type="xs:date">
+    <xs:annotation>
+      <xs:documentation>Accounting Reference Date (DD-MM significant)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LastMadeUpDate">
+    <xs:annotation>
+      <xs:documentation>Last Made Up Date</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:date">
+        <xs:whiteSpace value="collapse"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="DocumentAvailable" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Indicates that the document is available for access</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LastFullMemDate">
+    <xs:annotation>
+      <xs:documentation>Date on which a company last supplied a Full Members List</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:date">
+        <xs:whiteSpace value="collapse"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="LastBulkShareDate">
+    <xs:annotation>
+      <xs:documentation>Date last Bulk Shareholders List was supplied</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:date">
+        <xs:whiteSpace value="collapse"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="CountryOfOrigin">
+    <xs:annotation>
+      <xs:documentation>Country of Origin</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="20"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="NumGenPartners" type="xs:integer">
+    <xs:annotation>
+      <xs:documentation>Number of General Partners (LP)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NumLimPartners" type="xs:integer">
+    <xs:annotation>
+      <xs:documentation>Number of Limited Partners (LP)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Weeded" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Whether fiche has been weeded</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="HasUKestablishment" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Whether UK Establishment Information is available</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="WeededDate" type="xs:date">
+    <xs:annotation>
+      <xs:documentation>Fiche Weeded Date</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NumMortCharges" type="xs:integer">
+    <xs:annotation>
+      <xs:documentation>Number of charges recorded against company</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NumMortOutstanding" type="xs:integer">
+    <xs:annotation>
+      <xs:documentation>Number of outstanding Mortgage Charges</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NumMortSatisfied" type="xs:integer">
+    <xs:annotation>
+      <xs:documentation>Number Satisfied Mort Charges</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NumMortPartSatisfied" type="xs:integer">
+    <xs:annotation>
+      <xs:documentation>Number Part Satisfied Mort Charges</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="HasAppointments" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Indicates Appointment Information is available</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="InLiquidation" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Indicates Company in Liquidation</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="GiveMortTotals" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Requests the return of mortgage totals</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DataSet">
+    <xs:annotation>
+      <xs:documentation>The dataset to which a company belongs (live,dissolved etc)</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="LIVE">
+          <xs:annotation>
+            <xs:documentation>Index of Live and Recently Dissolved Companies</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="DISSOLVED">
+          <xs:annotation>
+            <xs:documentation>Index of Dissolved companies</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="FORMER">
+          <xs:annotation>
+            <xs:documentation>Index of Previous or Former company names</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="PROPOSED">
+          <xs:annotation>
+            <xs:documentation>Index of Proposed company names</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="CompanyDate" type="xs:date">
+    <xs:annotation>
+      <xs:documentation>Date associated with company</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CompanyIndexStatus">
+    <xs:annotation>
+      <xs:documentation>Gives the status of the company as reflected on the index</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="0"/>
+        <xs:enumeration value="EFFECTIVE">
+          <xs:annotation>
+            <xs:documentation>Proposed Company Name is Effective</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="REJECTED">
+          <xs:annotation>
+            <xs:documentation>Proposed Comapny Name has been Rejected</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="DISSOLVED">
+          <xs:annotation>
+            <xs:documentation>Company has been Dissolved</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="CNGOFNAME">
+          <xs:annotation>
+            <xs:documentation>This is a company Change of Name</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="INLIQ">
+          <xs:annotation>
+            <xs:documentation>Company is in Liquidation</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="REMOVED">
+          <xs:annotation>
+            <xs:documentation>Company has been removed</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="STATUSR"/>
+        <xs:enumeration value="STATUSA"/>
+        <xs:enumeration value="STATUSV"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="SearchMatch">
+    <xs:annotation>
+      <xs:documentation>Gives the search match status of a company</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="NEAR">
+          <xs:annotation>
+            <xs:documentation>This Company Name is the nearest search match as an exact match could not be found</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="EXACT">
+          <xs:annotation>
+            <xs:documentation>This company Name is an exact match for the given seach</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="SearchRows" type="xs:integer">
+    <xs:annotation>
+      <xs:documentation>Numer of rows to return/returned  in a search response</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ContinuationKey" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>The continuation key allowing further data sets to be retrieved</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RegressionKey" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>The key allowing previous data sets to be returned</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DocumentCategory">
+    <xs:annotation>
+      <xs:documentation>Document Category Code (0..9)</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:minInclusive value="0"/>
+        <xs:maxInclusive value="9"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="FormType" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Document Form Type</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DocumentType" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Document Type</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DocumentDesc" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Description of Document</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DocumentDate" type="xs:date">
+    <xs:annotation>
+      <xs:documentation>Filing date of document</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DocBeingScanned" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Indicates that the document is not yet available for download</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ImageKey" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Unique key of this document on the Image System - returned from a filing history</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CapitalDocInd" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Indicates whether capital documents are required in result</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="UserReference">
+    <xs:annotation>
+      <xs:documentation>User supplied reference</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="0"/>
+        <xs:maxLength value="24"/>
+        <xs:whiteSpace value="preserve"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="AppointmentStatus">
+    <xs:annotation>
+      <xs:documentation>Type of appintment (current/resigned)</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="CURRENT">
+          <xs:annotation>
+            <xs:documentation>The appointment is Current</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="RESIGNED">
+          <xs:annotation>
+            <xs:documentation>This is a resigned appointment</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="AppointmentType">
+    <xs:annotation>
+      <xs:documentation>Class of appointment. (dir, sec etc).</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="DIR">
+          <xs:annotation>
+            <xs:documentation>This appointment is for a Director</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="SEC">
+          <xs:annotation>
+            <xs:documentation>This appointment is for a Secretary</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="NOMDIR">
+          <xs:annotation>
+            <xs:documentation>This appointment is for a Nominated Director</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="NOMSEC">
+          <xs:annotation>
+            <xs:documentation>This appointment is for a Nominated Secretary</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="LLPMEM">
+          <xs:annotation>
+            <xs:documentation>This appointment is for a LLP Member</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="LLPDMEM">
+          <xs:annotation>
+            <xs:documentation>This appointment is for a LLP Designated Member</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="LLPGPART">
+          <xs:annotation>
+            <xs:documentation>This appointment is a General Partner in a Limited Partnership</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="LLPPART">
+          <xs:annotation>
+            <xs:documentation>This appointment is a Limited Partner in a Limited Partnership</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="EEIGMAN">
+          <xs:annotation>
+            <xs:documentation>This appointment is a Manager of an EEIG</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="PERSAUTHA">
+          <xs:annotation>
+            <xs:documentation>This appointment is a Person Authorised to Accept</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="PERSAUTHR">
+          <xs:annotation>
+            <xs:documentation>This appointment is a Person Authorised to Represent</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="PERSAUTHRA">
+          <xs:annotation>
+            <xs:documentation>This appointment is a Person Authorised to Represent and Accept</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="CICMAN">
+          <xs:annotation>
+            <xs:documentation>This appointment is a CIC Manager</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="RECMAN">
+          <xs:annotation>
+            <xs:documentation>This appointment is a Receiver and Manager</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="FACTOR">
+          <xs:annotation>
+            <xs:documentation>This appointment is a Judicial Factor</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="NumCurrentAppt">
+    <xs:annotation>
+      <xs:documentation>The number of current appointments for company/person</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:minInclusive value="0"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="NumResignedAppt">
+    <xs:annotation>
+      <xs:documentation>The number of resigned appointments for company/person</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:minInclusive value="0"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="NumDissolvedAppt">
+    <xs:annotation>
+      <xs:documentation>The number of dissolved appointments</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:minInclusive value="0"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="NumAppointments">
+    <xs:annotation>
+      <xs:documentation>Total number of personal appointments</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:minInclusive value="0"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="Surname" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Person Surname</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Forename" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Person Forename</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Title" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Person title</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Honours" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Person Honours</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PostTown" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Address post town</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="County" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Address County</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Country" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Address Country</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Postcode" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Address Postcode</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PostCode" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Deprecated. Address Postcode</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Nationality" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Person Nationality</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonID" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Unique identifier for Person (Private Database key. May be used in subsequent data requests)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DOB" type="xs:date">
+    <xs:annotation>
+      <xs:documentation>Date of Birth</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AppointmentDate" type="xs:date">
+    <xs:annotation>
+      <xs:documentation>Date of appointment</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResignationDate" type="xs:date">
+    <xs:annotation>
+      <xs:documentation>Date of resignation</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ApptDatePrefix">
+    <xs:annotation>
+      <xs:documentation>Appointment Date Prefix.  Used if the original data capture by Companies House took place during 1991/1992, taking the appointment date from the latest Annual Return.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="PRE"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ServiceAddressInd" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Indicates that this is a service address</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Person" type="PersonType">
+    <xs:annotation>
+      <xs:documentation>Person details</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonAddress" type="PersonAddrType">
+    <xs:annotation>
+      <xs:documentation>Person Address</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="PersonAddrType">
+    <xs:annotation>
+      <xs:documentation>Person AddressComplex Type</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="CareOfName" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="100"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="POBox" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="10"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element ref="AddressLine" maxOccurs="unbounded"/>
+      <xs:element ref="PostTown"/>
+      <xs:element ref="County" minOccurs="0"/>
+      <xs:element ref="Country" minOccurs="0"/>
+      <xs:element ref="Postcode" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PersonType">
+    <xs:annotation>
+      <xs:documentation>Person Complex Type</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="CorporateIndicator" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Indicates that the appointment relates to a corporate body</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element ref="Forename" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element ref="Surname"/>
+      <xs:element ref="Title" minOccurs="0"/>
+      <xs:element ref="DOB" minOccurs="0"/>
+      <xs:element ref="Nationality" minOccurs="0"/>
+      <xs:element name="CountryOfResidence" type="xs:string" minOccurs="0"/>
+      <xs:element name="PersonAddress" type="PersonAddrType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CoSearchItem" type="CoSearchCPLXType">
+    <xs:annotation>
+      <xs:documentation>Single company search result row</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="CoSearchCPLXType">
+    <xs:annotation>
+      <xs:documentation>Company Search result Cplx type</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element ref="CompanyName"/>
+      <xs:element ref="CompanyNumber"/>
+      <xs:element ref="DataSet"/>
+      <xs:element ref="CompanyIndexStatus" minOccurs="0"/>
+      <xs:element ref="CompanyDate" minOccurs="0"/>
+      <xs:element ref="SearchMatch" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StartDate" type="xs:date">
+    <xs:annotation>
+      <xs:documentation>Range Start Date</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EndDate" type="xs:date">
+    <xs:annotation>
+      <xs:documentation>Range End Date</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SatisfiedChargesInd" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Indicates whether satisfied charges are required</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ChargeNumber" type="xs:integer">
+    <xs:annotation>
+      <xs:documentation>Unique Charge Identified (Private Database reference - used in susequent requests)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ChargeCode">
+    <xs:annotation>
+      <xs:documentation>Unique Charge Code (For charges registerd afer 6th April 2013)</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="12"/>
+        <xs:maxLength value="16"/>
+        <xs:pattern value="[0-9A-Z]{2}[0-9]*"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="Description" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Description</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CreationDate" type="xs:date">
+    <xs:annotation>
+      <xs:documentation>Creation Date</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlterationToChgInd" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Alteration to charge indicator</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonEntChgName" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Person entitled to charge Name</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AdditionalPersonsEntitled" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Additional Persons Entitled to the Charge Indicator</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SatisfiedDate" type="xs:date">
+    <xs:annotation>
+      <xs:documentation>Satisfication Date</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ChargeSatisfied">
+    <xs:annotation>
+      <xs:documentation>Charge Satisfied Indicator</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="OUTSTANDING"/>
+        <xs:enumeration value="SATISFIED"/>
+        <xs:enumeration value="PARTSATISFIED"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="DetailsOnFicheInd" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Additional details available on Fiche indicator</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReceiverAptdInd" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Receiver Appointed Indicator</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ShortParticularsDesc" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Short particulars of charge</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="IncludeResignedInd" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Indicates whether resigned appointments should be returned</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MadeUpDate" type="xs:date">
+    <xs:annotation>
+      <xs:documentation>Document made up date</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Media">
+    <xs:annotation>
+      <xs:documentation>Image storage media</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="ARCHIVE"/>
+        <xs:enumeration value="JUKEBOX"/>
+        <xs:enumeration value="CACHE"/>
+        <xs:enumeration value="UNAVAILABLE"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="OfficerType">
+    <xs:annotation>
+      <xs:documentation>The officer type</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="CUR"/>
+        <xs:enumeration value="LLP"/>
+        <xs:enumeration value="DIS"/>
+        <xs:enumeration value="EUR"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="NumPages" type="xs:integer">
+    <xs:annotation>
+      <xs:documentation>Number of pages in document</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NumDisqualOrders" type="xs:integer">
+    <xs:annotation>
+      <xs:documentation>Number of disqualified orders</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DocRequestKey" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>A Unique key referencing document on image system</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DocumentName" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>The name of the document as delivered to the image repository server</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Occupation" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>The occupation of the officer</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NumAppInd">
+    <xs:annotation>
+      <xs:documentation>Indicates that the number of appointments is greater than the returned value</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="GE1000"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="OfficerSearchItem">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="OfficerSearchItemBase">
+          <xs:sequence>
+            <xs:element ref="PersonID"/>
+            <xs:element ref="SearchMatch" minOccurs="0"/>
+            <xs:element name="DuplicateOfficers">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element ref="DuplicateOfficerSearchItem" maxOccurs="unbounded"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="OfficerSearchItemBase">
+    <xs:sequence>
+      <xs:element ref="Title"/>
+      <xs:element ref="Surname"/>
+      <xs:element ref="Forename"/>
+      <xs:element ref="DOB"/>
+      <xs:element ref="PostTown"/>
+      <xs:element ref="Postcode"/>
+      <xs:element name="CountryOfResidence" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Country where officer is normally resident</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DuplicateOfficerSearchItem" type="OfficerSearchItemBase"/>
+</xs:schema>

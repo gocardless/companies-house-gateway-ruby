@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2005 rel. 3 U (http://www.altova.com) by Companies House (Companies House) -->
+<!-- Companies House XML Gateway Schema -->
+<!-- $Id: OfficerDetails.xsd,v 1.2 2005-01-11 13:51:21 www Exp $ -->
+<!-- edited with XML Spy v4.3 (http://www.xmlspy.com) by Martin Wood (Orchid Telematics Ltd/Software Development) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:include schemaLocation="chbase.xsd"/>
+  <xs:element name="OfficerDetails">
+    <xs:annotation>
+      <xs:documentation>Officer Appointments Search Result</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Person"/>
+        <xs:element name="ApptCount" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Contains counts for the various types of appointments, only if the officer has current appointments</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="NumCurrentAppt"/>
+              <xs:element ref="NumDissolvedAppt"/>
+              <xs:element ref="NumResignedAppt"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element ref="NumDisqualOrders" minOccurs="0"/>
+        <xs:element ref="OfficerAppt" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="OfficerDisq" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="ContinuationKey" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OfficerDetailsRequest">
+    <xs:annotation>
+      <xs:documentation>Officer Appointments Request</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="PersonID"/>
+        <xs:element ref="UserReference"/>
+        <xs:element ref="ContinuationKey" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OfficerAppt" type="OfficerApptCPLXType">
+    <xs:annotation>
+      <xs:documentation>A single officer appointment</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="OfficerApptCPLXType">
+    <xs:annotation>
+      <xs:documentation>Officer Appointment Complex Type</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element ref="CompanyName"/>
+      <xs:element ref="CompanyNumber"/>
+      <xs:element ref="CompanyStatus"/>
+      <xs:element ref="AppointmentStatus"/>
+      <xs:element ref="AppointmentType"/>
+      <xs:element ref="ApptDatePrefix" minOccurs="0"/>
+      <xs:element ref="AppointmentDate"/>
+      <xs:element ref="ResignationDate" minOccurs="0"/>
+      <xs:element ref="Occupation" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OfficerDisqCPLXType">
+    <xs:sequence>
+      <xs:element ref="CompanyName"/>
+      <xs:element ref="CompanyNumber"/>
+      <xs:element name="DisqReason" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Reason for the disqualification</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element ref="StartDate"/>
+      <xs:element ref="EndDate"/>
+      <xs:element name="Exemption" type="DisqExemptionCPLXType" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>An exemption from the disqualification order</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OfficerDisq" type="OfficerDisqCPLXType">
+    <xs:annotation>
+      <xs:documentation>An Officer Disqualification order</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="DisqExemptionCPLXType">
+    <xs:sequence>
+      <xs:element ref="CompanyName"/>
+      <xs:element ref="CompanyNumber"/>
+      <xs:element ref="StartDate"/>
+      <xs:element ref="EndDate"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DisqExemption"/>
+</xs:schema>

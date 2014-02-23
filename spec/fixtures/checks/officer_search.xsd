@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Companies House XML Gateway Schema -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:include schemaLocation="chbase.xsd"/>
+  <xs:element name="OfficerSearchRequest">
+    <xs:annotation>
+      <xs:documentation>Officer Search Request</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Surname"/>
+        <xs:element ref="Forename" minOccurs="0" maxOccurs="2"/>
+        <xs:element ref="PostTown" minOccurs="0"/>
+        <xs:element ref="OfficerType"/>
+        <xs:element name="CountryOfResidence" type="xs:string" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Normal country of residence for the officer</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element ref="IncludeResignedInd" minOccurs="0"/>
+        <xs:element ref="ContinuationKey" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OfficerSearch">
+    <xs:annotation>
+      <xs:documentation>Officer Search Result</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ContinuationKey" minOccurs="0"/>
+        <xs:element ref="SearchRows"/>
+        <xs:element ref="OfficerSearchItem" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

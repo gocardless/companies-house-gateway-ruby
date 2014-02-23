@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2005 rel. 3 U (http://www.altova.com) by Companies House (Companies House) -->
+<!-- Companies House XML Gateway Schema -->
+<!-- $Id: FilingHistory-v2-1.xsd,v 1.1 2008-07-24 09:05:52 csmith Exp $ -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:include schemaLocation="chbase.xsd"/>
+  <xs:element name="FilingHistoryRequest">
+    <xs:annotation>
+      <xs:documentation>Filing History Request</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="CompanyNumber"/>
+        <xs:element ref="CapitalDocInd" minOccurs="0"/>
+        <xs:element ref="ContinuationKey" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Specification of a ContinuationKey will override any other request parameters rendering them ineffective</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FilingHistory">
+    <xs:annotation>
+      <xs:documentation>A Companies Filing History</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="CompanyNumber"/>
+        <xs:element ref="CompanyName"/>
+        <xs:element ref="SearchRows"/>
+        <xs:element ref="ContinuationKey" minOccurs="0"/>
+        <xs:element ref="FHistItem" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FHistItem" type="FHistCPLXtType">
+    <xs:annotation>
+      <xs:documentation>Filing History Item</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="FHistCPLXtType">
+    <xs:annotation>
+      <xs:documentation>Single Filing History Entity</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element ref="DocumentDesc" maxOccurs="unbounded"/>
+      <xs:element ref="DocumentDate"/>
+      <xs:element ref="FormType"/>
+      <xs:element ref="DocBeingScanned" minOccurs="0"/>
+      <xs:element ref="ImageKey" minOccurs="0"/>
+      <xs:element name="ChildDocument" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ChildDocumentType">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="DOCUMENT"/>
+                  <xs:enumeration value="ANNOTATION"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element ref="DocumentDate"/>
+            <xs:element ref="FormType" minOccurs="0"/>
+            <xs:element ref="DocumentDesc"/>
+            <xs:element ref="Description" minOccurs="0"/>
+            <xs:element name="LastestStatementOfCapital" type="xs:boolean" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>Indicates that the document is the latest statement of capital</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

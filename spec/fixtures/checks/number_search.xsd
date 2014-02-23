@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Companies House XML Gateway Schema -->
+<!-- $Id: NumberSearch.xsd,v 1.8 2002-10-24 15:10:09 www Exp $ -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:include schemaLocation="chbase.xsd"/>
+  <xs:element name="NumberSearchRequest">
+    <xs:annotation>
+      <xs:documentation>Name Search Request</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="PartialCompanyNumber"/>
+        <xs:element ref="DataSet" maxOccurs="4"/>
+        <xs:element ref="SearchRows" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NumberSearch">
+    <xs:annotation>
+      <xs:documentation>Name SearchResult</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="SearchRows"/>
+        <xs:element ref="CoSearchItem" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
