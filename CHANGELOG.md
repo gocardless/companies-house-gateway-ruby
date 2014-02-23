@@ -1,3 +1,7 @@
+## 0.1.2 - February 23, 2014
+
+- Add officer_details and officer_search classes
+
 ## 0.1.1 - February 22, 2014
 
 - Add company_appointments class

@@ -15,6 +15,8 @@ require 'companies_house_gateway/checks/name_search'
 require 'companies_house_gateway/checks/number_search'
 require 'companies_house_gateway/checks/company_appointments'
 require 'companies_house_gateway/checks/company_details'
+require 'companies_house_gateway/checks/officer_search'
+require 'companies_house_gateway/checks/officer_details'
 
 module CompaniesHouseGateway
   def self.configure(&block)
