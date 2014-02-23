@@ -42,4 +42,8 @@ describe CompaniesHouseGateway do
   it_behaves_like "it delegates to the client", :company_details
   it_behaves_like "it delegates to the client", :officer_search
   it_behaves_like "it delegates to the client", :officer_details
+  it_behaves_like "it delegates to the client", :mortgages
+  it_behaves_like "it delegates to the client", :filing_history
+  it_behaves_like "it delegates to the client", :document_info
+  it_behaves_like "it delegates to the client", :document
 end

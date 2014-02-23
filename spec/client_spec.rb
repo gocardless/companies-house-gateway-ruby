@@ -51,4 +51,8 @@ describe CompaniesHouseGateway::Client do
   it_behaves_like "it delegates to the check", :company_details
   it_behaves_like "it delegates to the check", :officer_search
   it_behaves_like "it delegates to the check", :officer_details
+  it_behaves_like "it delegates to the check", :mortgages
+  it_behaves_like "it delegates to the check", :filing_history
+  it_behaves_like "it delegates to the check", :document_info
+  it_behaves_like "it delegates to the check", :document
 end

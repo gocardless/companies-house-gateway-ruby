@@ -17,6 +17,10 @@ require 'companies_house_gateway/checks/company_appointments'
 require 'companies_house_gateway/checks/company_details'
 require 'companies_house_gateway/checks/officer_search'
 require 'companies_house_gateway/checks/officer_details'
+require 'companies_house_gateway/checks/mortgages'
+require 'companies_house_gateway/checks/filing_history'
+require 'companies_house_gateway/checks/document_info'
+require 'companies_house_gateway/checks/document'
 
 module CompaniesHouseGateway
   def self.configure(&block)

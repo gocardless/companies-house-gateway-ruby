@@ -1,3 +1,8 @@
+## 0.2.0 - February 23, 2014
+
+- Add filing_history and document_info and document classes. Gem now covers
+  all possible request types
+
 ## 0.1.2 - February 23, 2014
 
 - Add officer_details and officer_search classes
