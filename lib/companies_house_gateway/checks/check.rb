@@ -28,8 +28,9 @@ module CompaniesHouseGateway
 
         data.keys.each do |param|
           unless self.class.allowed_inputs.include?(param)
-            msg = "#{Util.demodulize(self.class)} does not accept #{param}. " +
-                  "Only the following inputs are permitted: #{self.class.allowed_inputs}"
+            msg = "#{Util.demodulize(self.class)} does not accept " +
+                  "#{param}. Only the following inputs are permitted: " +
+                  "#{self.class.allowed_inputs.to_a}"
             raise CompaniesHouseGatewayError.new(msg)
           end
         end
