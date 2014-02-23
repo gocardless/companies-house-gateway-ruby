@@ -90,7 +90,10 @@ module CompaniesHouseGateway
     def request_body(xml, request_type, search_data)
       xml.send("#{request_type}Request", request_namespace(request_type)) do
         search_data.each do |key, value|
-          xml.send(Util.camelize(key), value) if value
+          if value
+            element_name = Util.camelize(key).sub(/Id\z/, "ID")
+            xml.send(element_name, value)
+          end
         end
       end
     end
