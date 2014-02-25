@@ -34,12 +34,12 @@ module CompaniesHouseGateway
         }
       }
 
-      Faraday.new(options) do |conn|
-        conn.response :check_response unless @config[:raw]  # Check XML
-        conn.response :xml  unless @config[:raw]            # Parse response
-        conn.response :follow_redirects, limit: 3           # Follow redirect
-        conn.response :raise_error                          # Raise errors
-        conn.adapter @config[:adapter]
+      Faraday.new(options) do |c|
+        c.response :check_ch_response unless @config[:raw]  # Check XML
+        c.response :xml  unless @config[:raw]               # Parse response
+        c.response :follow_redirects, limit: 3              # Follow redirect
+        c.response :raise_error                             # Raise errors
+        c.adapter @config[:adapter]
       end
     end
   end

@@ -24,6 +24,6 @@ module CompaniesHouseGateway
       end
     end
 
-    Faraday.register_middleware :response, check_response: CheckResponse
+    Faraday.register_middleware :response, check_ch_response: CheckResponse
   end
 end
