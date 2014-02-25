@@ -6,6 +6,5 @@ describe CompaniesHouseGateway::Checks::OfficerDetails do
 
     it_behaves_like "it generates_valid_xml"
     it_behaves_like "it validates presence", :person_id
-    it_behaves_like "it validates presence", :user_reference
   end
 end

@@ -1,4 +1,8 @@
-## 0.3.0 - February 23, 2014
+## 0.3.1 - February 25, 2014
+
+- Make UserReference optional on all checks (pre-populate if not provided)
+
+## 0.3.0 - February 25, 2014
 
 - Validate inputs to all checks. Add InvalidRequestError
 

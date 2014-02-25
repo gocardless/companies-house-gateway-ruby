@@ -6,7 +6,9 @@ module CompaniesHouseGateway
       required_input :person_id,
                      :user_reference
 
-      default_input continuation_key: nil
+      default_input user_reference: "REFERENCE",
+                    continuation_key: nil
+
     end
   end
 end

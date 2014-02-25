@@ -8,7 +8,8 @@ module CompaniesHouseGateway
                      :user_reference
 
       default_input continuation_key: nil,
-                    include_resigned_ind: false
+                    include_resigned_ind: false,
+                    user_reference: "REFERENCE"
     end
   end
 end

@@ -10,7 +10,8 @@ module CompaniesHouseGateway
       default_input satisfied_charges_ind: false,
                     start_date: nil,
                     end_date: nil,
-                    continuation_key: nil
+                    continuation_key: nil,
+                    user_reference: "REFERENCE"
     end
   end
 end
