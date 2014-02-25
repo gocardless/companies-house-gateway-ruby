@@ -22,7 +22,7 @@ module CompaniesHouseGateway
         self.class.required_inputs.each do |param|
           if data[param].nil?
             msg = "#{Util.demodulize(self.class)} requires a #{param}"
-            raise CompaniesHouseGatewayError.new(msg)
+            raise InvalidRequestError.new(msg, param)
           end
         end
 
@@ -31,7 +31,7 @@ module CompaniesHouseGateway
             msg = "#{Util.demodulize(self.class)} does not accept " +
                   "#{param}. Only the following inputs are permitted: " +
                   "#{self.class.allowed_inputs.to_a}"
-            raise CompaniesHouseGatewayError.new(msg)
+            raise InvalidRequestError.new(msg, param)
           end
         end
       end

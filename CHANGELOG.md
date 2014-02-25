@@ -1,3 +1,7 @@
+## 0.3.0 - February 23, 2014
+
+- Validate inputs to all checks. Add InvalidRequestError
+
 ## 0.2.0 - February 23, 2014
 
 - Add filing_history and document_info and document classes. Gem now covers

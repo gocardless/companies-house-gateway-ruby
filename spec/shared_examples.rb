@@ -8,7 +8,7 @@ shared_examples 'it validates presence' do |property|
 
     it "raises and error" do
       expect { perform_check }.
-        to raise_error CompaniesHouseGateway::CompaniesHouseGatewayError
+        to raise_error CompaniesHouseGateway::InvalidRequestError
     end
   end
 end

@@ -8,6 +8,7 @@ module CompaniesHouseGateway
 
       default_input forename: nil,
                     post_town: nil,
+                    officer_type: "CUR",
                     country_of_residence: nil,
                     continuation_key: nil,
                     include_resigned_ind: false

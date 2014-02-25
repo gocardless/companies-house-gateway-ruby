@@ -83,7 +83,8 @@ module CompaniesHouseGateway
         search_data.each do |key, value|
           if value
             element_name = Util.camelize(key).sub(/Id\z/, "ID")
-            xml.send(element_name, value)
+            cleaned_value = Validations.clean_param(key, value)
+            xml.send(element_name, cleaned_value)
           end
         end
       end
