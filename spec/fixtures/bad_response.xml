@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<GovTalkMessage xsi:schemaLocation="http://www.govtalk.gov.uk/CM/envelope http://xmlgw.companieshouse.gov.uk/v1-1/schema/Egov_ch-v2-0.xsd" xmlns="http://www.govtalk.gov.uk/CM/envelope" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:gt="http://www.govtalk.gov.uk/schemas/govtalk/core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+  <EnvelopeVersion>1.0</EnvelopeVersion>
+  <Header>
+    <MessageDetails>
+      <Class>Document</Class>
+      <Qualifier>error</Qualifier>
+      <TransactionID>139335771961</TransactionID>
+      <GatewayTimestamp>2014-02-25T19:48:40-00:00</GatewayTimestamp>
+    </MessageDetails>
+    <SenderDetails>
+      <IDAuthentication>
+        <SenderID>XMLGatewayTestUserID</SenderID>
+        <Authentication>
+          <Method>CHMD5</Method>
+          <Value>760b2d181e070027c70761eaf1e93f05</Value>
+        </Authentication>
+      </IDAuthentication>
+    </SenderDetails>
+  </Header>
+  <GovTalkDetails>
+    <Keys/>
+  <GovTalkErrors>
+    <Error>
+      <RaisedBy>Document</RaisedBy>
+      <Number>604</Number>
+      <Type>fatal</Type>
+      <Text>Error text</Text>
+      <Location></Location>
+    </Error>
+  </GovTalkErrors>
+  </GovTalkDetails>
+  <Body>
+  </Body>
+</GovTalkMessage>

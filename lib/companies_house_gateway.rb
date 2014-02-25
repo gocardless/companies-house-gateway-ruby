@@ -8,9 +8,12 @@ require 'companies_house_gateway/validations'
 require 'companies_house_gateway/config'
 require 'companies_house_gateway/request'
 require 'companies_house_gateway/client'
+require 'companies_house_gateway/middleware/check_response'
 
 require 'companies_house_gateway/errors/companies_house_gateway_error'
 require 'companies_house_gateway/errors/invalid_request_error'
+require 'companies_house_gateway/errors/invalid_response_error'
+require 'companies_house_gateway/errors/api_error'
 
 require 'companies_house_gateway/checks/check'
 require 'companies_house_gateway/checks/name_search'

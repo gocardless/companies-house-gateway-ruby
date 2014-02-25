@@ -9,8 +9,10 @@ describe CompaniesHouseGateway::Request do
 
   let(:response_hash) { { status: status, body: body } }
   let(:status) { 200 }
-  let(:body) { "<Results><Errors/></Results>" }
-  before { stub_request(:post, config[:api_endpoint]).to_return(response_hash) }
+  let(:body) { load_fixture('response.xml') }
+  before do
+    stub_request(:post, config[:api_endpoint]).to_return(response_hash)
+  end
 
   let(:request_type) { :name_search }
   let(:request_data) { {} }
@@ -51,7 +53,7 @@ describe CompaniesHouseGateway::Request do
 
     context "when the config[:raw] is false" do
       it { should be_a Hash }
-      it { should include "Results" }
+      it { should include "GovTalkMessage" }
 
       context "errors" do
         context "500" do
@@ -69,6 +71,25 @@ describe CompaniesHouseGateway::Request do
           it "wraps the error" do
             expect { perform_check }.
               to raise_error CompaniesHouseGateway::CompaniesHouseGatewayError
+          end
+        end
+
+        context "200 with an error from Companies House" do
+          let(:body) { load_fixture('bad_response.xml') }
+
+          it "wraps the error" do
+            expect { perform_check }.
+              to raise_error(
+                CompaniesHouseGateway::APIError, "(604) Error text")
+          end
+        end
+
+        context "200 with unexpected XML" do
+          let(:body) { "<TopLevel></TopLevel>" }
+
+          it "wraps the error" do
+            expect { perform_check }.
+              to raise_error CompaniesHouseGateway::InvalidResponseError
           end
         end
       end

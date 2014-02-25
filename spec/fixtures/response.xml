@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<GovTalkMessage xsi:schemaLocation="http://www.govtalk.gov.uk/CM/envelope http://xmlgw.companieshouse.gov.uk/v1-1/schema/Egov_ch-v2-0.xsd" xmlns="http://www.govtalk.gov.uk/CM/envelope" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:gt="http://www.govtalk.gov.uk/schemas/govtalk/core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+  <EnvelopeVersion>1.0</EnvelopeVersion>
+  <Header>
+    <MessageDetails>
+      <Class>CompanyAppointments</Class>
+      <Qualifier>response</Qualifier>
+      <TransactionID>139335957980</TransactionID>
+      <GatewayTimestamp>2014-02-25T20:19:40-00:00</GatewayTimestamp>
+    </MessageDetails>
+    <SenderDetails>
+      <IDAuthentication>
+        <SenderID>XMLGatewayTestUserID</SenderID>
+        <Authentication>
+          <Method>CHMD5</Method>
+          <Value></Value>
+        </Authentication>
+      </IDAuthentication>
+    </SenderDetails>
+  </Header>
+  <GovTalkDetails>
+    <Keys/>
+  </GovTalkDetails>
+  <Body>
+    <CompanyAppointments xmlns="http://xmlgw.companieshouse.gov.uk/v1-0/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlgw.companieshouse.gov.uk/v1-0/schema http://xmlgw.companieshouse.gov.uk/v1-0/schema/CompanyAppointments-v2-1.xsd">
+  <CompanyName>MILLENNIUM STADIUM PLC</CompanyName>
+  <CompanyNumber>03176906</CompanyNumber>
+  <NumCurrentAppt>12</NumCurrentAppt>
+  <NumResignedAppt>34</NumResignedAppt>
+  <SearchRows>12</SearchRows>
+  <CoAppt>
+    <Person>
+      <Forename>RICHARD STEPHEN</Forename>
+      <Surname>PHILLIPS</Surname>
+      <Title></Title>
+      <DOB>1964-04-01</DOB>
+      <Nationality>BRITISH</Nationality>
+      <CountryOfResidence>UK</CountryOfResidence>
+      <PersonAddress>
+        <AddressLine>BEDWEN NEWTOWN</AddressLine>
+        <PostTown>AMMANFORD</PostTown>
+        <County>CARMARTHENSHIRE</County>
+        <Country></Country>
+        <Postcode>SA18 3TE</Postcode>
+      </PersonAddress>
+      <PersonID>CSeJxNkN1qg0AQhe/7FOJ9u2tT4hbGlZIfXJBUEnstVsd2SVzNrob49tUFG2+GM9+cwwwD4b2+ODfURjYqcL0X6jqoiqaU6idwv9L9M3OdkD/BGYex5m1rurzrDadAHs3Eu6FF7llqJZRSV41GldfIj2ITfRy3zindJdHuAGQ5nJym11YnkYhjkZysY4ajwVyFKqels4RzhtmQyazkn1UlC9RiC+QBoUWt+vqbU0rfV2/Me2VAZgYGc138pvZOsmzMIrZeecxn/mj4z5HpDX9njmly</PersonID>
+    </Person>
+    <NumAppointments>16</NumAppointments>
+    <AppointmentType>SEC</AppointmentType>
+    <AppointmentStatus>CURRENT</AppointmentStatus>
+    <AppointmentDate>2009-08-27</AppointmentDate>
+    <Occupation>GROUP FINANCE DIRECTOR</Occupation>
+  </CoAppt>
+</CompanyAppointments>
+  </Body>
+</GovTalkMessage>

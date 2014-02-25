@@ -1,3 +1,7 @@
+## 0.3.2 - February 25, 2014
+
+- Check Companies House response for errors or unexpected XML
+
 ## 0.3.1 - February 25, 2014
 
 - Make UserReference optional on all checks (pre-populate if not provided)
