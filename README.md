@@ -1,4 +1,4 @@
-# Companies House XML Gateway Ruby Client Library
+# Companies House Gateway
 
 Simple Ruby Gem for interacting with the Companies House XML Gateway API. Wraps
 the XML submissions and responses required so you can deal with Ruby hashes
