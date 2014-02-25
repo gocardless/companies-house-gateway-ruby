@@ -3,8 +3,7 @@ module CompaniesHouseGateway
     class NameSearch
       include Check
 
-      required_input :company_name,
-                     :data_set
+      required_input :company_name
 
       default_input  data_set: "LIVE",
                      same_as: false,

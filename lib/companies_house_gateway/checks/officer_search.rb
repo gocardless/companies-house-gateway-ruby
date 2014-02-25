@@ -3,8 +3,7 @@ module CompaniesHouseGateway
     class OfficerSearch
       include Check
 
-      required_input :surname,
-                     :officer_type
+      required_input :surname
 
       default_input forename: nil,
                     post_town: nil,

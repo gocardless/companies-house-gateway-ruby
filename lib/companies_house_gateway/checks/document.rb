@@ -3,8 +3,7 @@ module CompaniesHouseGateway
     class Document
       include Check
 
-      required_input :doc_request_key,
-                     :user_reference
+      required_input :doc_request_key
 
       default_input user_reference: "REFERENCE"
     end

@@ -4,8 +4,7 @@ module CompaniesHouseGateway
       include Check
 
       required_input :company_name,
-                     :company_number,
-                     :user_reference
+                     :company_number
 
       default_input satisfied_charges_ind: false,
                     start_date: nil,

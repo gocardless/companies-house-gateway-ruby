@@ -3,8 +3,7 @@ module CompaniesHouseGateway
     class OfficerDetails
       include Check
 
-      required_input :person_id,
-                     :user_reference
+      required_input :person_id
 
       default_input user_reference: "REFERENCE",
                     continuation_key: nil
