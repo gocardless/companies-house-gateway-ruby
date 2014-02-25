@@ -22,7 +22,36 @@ you'll need to get in touch with
 
 ```ruby
 CompaniesHouseGateway.configure do |config|
-  config[:sender_id]        = YOUR_SENDER_ID
-  config[:password]         = YOUR_PASSWORD
+  config[:sender_id] = YOUR_SENDER_ID
+  config[:password]  = YOUR_PASSWORD
+  config[:email]     = YOUR_EMAIL              # Optional
 end
+```
+
+### Performing checks
+Each check type has a convenience method on the top-level module:
+
+```ruby
+CompaniesHouseGateway.name_search(company_name: "GoCardless")
+CompaniesHouseGateway.company_details(company_number: "07495895")
+```
+
+The library will raise an error if you're missing any of the required
+parameters, or including any which can't be used.
+
+### Parsing responses
+
+Unless you've set the "raw" argument to true in your config, checks return a
+hash.
+
+```ruby
+CompaniesHouseGateway.name_search(...)         # => Hash of results
+```
+
+Set the "raw" argument to true if you need the full, unprocessed response
+(including headers, etc.).
+
+```ruby
+CompaniesHouseGateway.config[:raw] = true
+CompaniesHouseGateway.name_search(...)         # => Faraday::Response object
 ```
