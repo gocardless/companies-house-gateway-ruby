@@ -1,3 +1,7 @@
+## 0.3.4 - February 26, 2014
+
+- Fix XML generation for CompanyAppointments requests
+
 ## 0.3.3 - February 25, 2014
 
 - Only return the body of the response if raw mode is false
