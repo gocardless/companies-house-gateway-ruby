@@ -18,5 +18,15 @@ module CompaniesHouseGateway
       "CUR",       # Current (i.e., not above)
       "EUR",       # SE and ES appointments only
     ].freeze
+
+    # White list of allowed prefixes for companies house numbers.
+    # 1st line is English and Welsh prefixes
+    # 2nd line is Scottish prefixes
+    # 3rd line is Northen Irish prefixes
+    # \d\d is the default prefix in regex notation.
+    ALLOWED_PREFIXES = %w(AC BR FC GE IP LP OC RC SE ZC
+                          SC SA SF SL SZ SP SO SR
+                          NI NA NF NL NZ NP NO NR
+                          \d\d)
   end
 end

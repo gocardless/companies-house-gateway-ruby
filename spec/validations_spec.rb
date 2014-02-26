@@ -154,4 +154,70 @@ describe CompaniesHouseGateway::Validations do
       end
     end
   end
+
+  describe '#clean_company_number' do
+    subject do
+      CompaniesHouseGateway::Validations.clean_company_number(number)
+    end
+
+    context "with a number that's too short" do
+      let(:number) { "123456" }
+      it "throws an exception" do
+        expect { subject }.
+          to raise_error CompaniesHouseGateway::InvalidRequestError
+      end
+    end
+
+    context "with a number that's too long" do
+      let(:number) { "123456789" }
+      it "throws an exception" do
+        expect { subject }.
+          to raise_error CompaniesHouseGateway::InvalidRequestError
+      end
+    end
+
+    context "with a number that contains spaces" do
+      let(:number) { "1234 ABC" }
+      it "throws an exception" do
+        expect { subject }.
+          to raise_error CompaniesHouseGateway::InvalidRequestError
+      end
+    end
+
+    context "with a number that contains non alphanumeric chars" do
+      let(:number) { "1234?456" }
+      it "throws an exception" do
+        expect { subject }.
+          to raise_error CompaniesHouseGateway::InvalidRequestError
+      end
+    end
+
+    CompaniesHouseGateway::Constants::ALLOWED_PREFIXES.each do |prefix|
+      context "allows a company number starting with #{prefix}" do
+        prefix = (prefix == '\d\d') ? '07' : prefix
+        let(:number) { "#{prefix}112233" }
+        it { should == "#{prefix}112233" }
+      end
+    end
+
+    context "does not 0-pads 8 digit registration numbers" do
+      let(:number) { "17495895" }
+      it { should == "17495895" }
+    end
+
+    context "0-pads 7 digit registration numbers" do
+      let(:number) { "7495895" }
+      it { should == "07495895" }
+    end
+
+    context "0-pads 5 digit NI registration numbers" do
+      let(:number) { "NI27768" }
+      it { should == "NI027768" }
+    end
+
+    context "does not 0-pads 6 digit NI registration numbers" do
+      let(:number) { "NI127768" }
+      it { should == "NI127768" }
+    end
+  end
 end

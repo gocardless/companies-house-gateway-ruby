@@ -3,8 +3,8 @@ module CompaniesHouseGateway
 
     VALIDATIONS = {
       company_name:           ->(value) { clean_string(value, :company_name) },
-      company_number:         ->(value) { value }, # TODO!
-      partial_company_number: ->(value) { value }, # TODO!
+      company_number:         ->(value) { clean_company_number(value) },
+      partial_company_number: ->(value) { value },
       give_mort_totals:       ->(value) { clean_boolean(value, :give_mort_totals) },
       search_rows:            ->(value) { clean_number(value, :search_rows) },
       data_set:               ->(value) { clean_data_set(value) },
@@ -64,6 +64,25 @@ module CompaniesHouseGateway
         input_error(:officer_type, type)
       end
       type
+    end
+
+    def self.clean_company_number(number)
+      return unless number
+      number = number.to_s.strip # remove whitespace
+
+      # 0-pad 5 or 7 digit registration number
+      if number.match /\A(\D{2})(\d{5})\z/
+        number = $1 + $2.rjust(6,"0")
+      elsif number.match /\A\d{7}\z/
+        number = number.rjust(8, "0")
+      end
+
+      companies_house_regex = /\A(#{Constants::ALLOWED_PREFIXES * '|'})\d{6}\z/
+      if number =~ companies_house_regex
+        number
+      else
+        input_error(:company_number, number)
+      end
     end
 
     def self.input_error(param, value=nil)
