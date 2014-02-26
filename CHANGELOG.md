@@ -1,3 +1,7 @@
+## 0.3.5 - February 26, 2014
+
+- Allow requests to be cached
+
 ## 0.3.4 - February 26, 2014
 
 - Fix XML generation for CompanyAppointments requests
