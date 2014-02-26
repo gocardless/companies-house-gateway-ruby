@@ -8,7 +8,8 @@ describe CompaniesHouseGateway::Checks::DocumentInfo do
         image_key: "asd121a" }
     end
 
-    it_behaves_like "it generates_valid_xml"
+    it_behaves_like "it generates valid xml"
+    it_behaves_like "it returns only the body of the response"
     it_behaves_like "it validates presence", :company_name
     it_behaves_like "it validates presence", :company_number
     it_behaves_like "it validates presence", :image_key

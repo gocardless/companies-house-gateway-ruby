@@ -13,7 +13,7 @@ shared_examples 'it validates presence' do |property|
   end
 end
 
-shared_examples 'it generates_valid_xml' do
+shared_examples 'it generates valid xml' do
   let(:request) { CompaniesHouseGateway::Request.new(connection, config) }
   let(:client) { CompaniesHouseGateway::Client.new(config) }
   let(:config) { CompaniesHouseGateway::Config.new }
@@ -28,7 +28,7 @@ shared_examples 'it generates_valid_xml' do
   end
 
   let(:xsd_path) do
-    fixture_path('checks',
+    fixture_path('check_schemas',
                  "#{CompaniesHouseGateway::Util.underscore(klass)}.xsd")
   end
   let(:xsd_doc) { Nokogiri::XML(File.read(xsd_path), xsd_path) }
@@ -37,4 +37,21 @@ shared_examples 'it generates_valid_xml' do
   it "generates a valid XML request" do
     xsd.validate(request_xml).should == []
   end
+end
+
+shared_examples 'it returns only the body of the response' do
+  let(:client) { CompaniesHouseGateway::Client.new(config) }
+  let(:config) { CompaniesHouseGateway::Config.new }
+  let(:klass) { described_class.name.split("::").last }
+  let(:response) { { status: 200, body: body } }
+  let(:body) do
+    load_fixture('check_responses',
+                 "#{CompaniesHouseGateway::Util.underscore(klass)}.xml")
+  end
+  before { stub_request(:post, config[:api_endpoint]).to_return(response) }
+  subject { described_class.new(client).perform(check_data) }
+
+  it { should be_a Hash }
+  it { should_not be_empty }
+  it { should_not include klass }
 end

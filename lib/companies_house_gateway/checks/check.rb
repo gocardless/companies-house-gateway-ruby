@@ -13,7 +13,8 @@ module CompaniesHouseGateway
         data = self.class.default_inputs.merge(data)
         check_params(data)
         check_type = Util.underscore(Util.demodulize(self.class))
-        @client.perform_check(check_type, data)
+        response = @client.perform_check(check_type, data)
+        @client.config[:raw] ? response : response_body(response)
       end
 
       private
@@ -34,6 +35,10 @@ module CompaniesHouseGateway
             raise InvalidRequestError.new(msg, param)
           end
         end
+      end
+
+      def response_body(response)
+        response["GovTalkMessage"]["Body"][Util.demodulize(self.class)]
       end
 
       module ClassMethods

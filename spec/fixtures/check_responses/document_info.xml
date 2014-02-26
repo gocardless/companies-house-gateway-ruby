@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<GovTalkMessage xsi:schemaLocation="http://www.govtalk.gov.uk/CM/envelope http://xmlgw.companieshouse.gov.uk/v1-1/schema/Egov_ch-v2-0.xsd" xmlns="http://www.govtalk.gov.uk/CM/envelope" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:gt="http://www.govtalk.gov.uk/schemas/govtalk/core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+  <EnvelopeVersion>1.0</EnvelopeVersion>
+  <Header>
+    <MessageDetails>
+      <Class>DocumentInfo</Class>
+      <Qualifier>response</Qualifier>
+      <TransactionID>139337352288</TransactionID>
+      <GatewayTimestamp>2014-02-26T00:12:03-00:00</GatewayTimestamp>
+    </MessageDetails>
+    <SenderDetails>
+      <IDAuthentication>
+        <SenderID>XMLGatewayTestUserID</SenderID>
+        <Authentication>
+          <Method>CHMD5</Method>
+          <Value></Value>
+        </Authentication>
+      </IDAuthentication>
+    </SenderDetails>
+  </Header>
+  <GovTalkDetails>
+    <Keys/>
+  </GovTalkDetails>
+  <Body>
+    <DocumentInfo xmlns="http://xmlgw.companieshouse.gov.uk/v1-0/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlgw.companieshouse.gov.uk/v1-0/schema http://xmlgw.companieshouse.gov.uk/v1-0/schema/CompanyDocument.xsd">
+  <CompanyNumber>03176906</CompanyNumber>
+  <FormType>AR01</FormType>
+  <NumPages>15</NumPages>
+  <MadeUpDate>2013-03-25</MadeUpDate>
+  <Media>CACHE</Media>
+  <DocRequestKey>378aaaeJyV0ltv0zAUB/Bell7SwYDBwp0x7pdB0tDA+jZXQpto2TQkxFvkxl5j0dhR4o71DfhafDn+pxtomsQDlX6q5fgcn3MSp7nKHOYuxwlPUin2+USWrPWddlI1SWVpaYu1fjC3E+dYfpxlY1ksNtyY53lpuZ2VlKMhxl/lvGS1SqVSdZf9Mz9Kp+XxItcHOWfnnzbiRCMvc1t+GLyNtvwIy8V1dNr5Ez40XPwrnGeSuWsjNZ1KrdUsW/9kuaD//eGAShVyqo5G0qasjfIqzF2JS8mLJB2ahFtlNHNrg226SWUTFJMvJuHVgh5z23FeGDEwQlJw9Ivy4VQ2E9xK5rW6fhD6YRcnm3Eh810tTkeIQ6U1hRRKM68a0vPDVOA+6gk59NHpOM823o5npSxOGnKOs+nkG8UJk1CcVw+jkN5FaQqrT4K9ehC9o3wG7ShxIA/PDXKMPql4r4NxfelGn0fB1ntKgvqQ185zPFvaPvADup0yK0t5q72fmwODUWglyx2Dsvr93QyD2SuELPp99Xe9w7WYyuL/TvfoQwH6YOqwBA40oAktwLwrLnTgAlyEFbgEl+EKrMJVuAZr4MF1uAE34RbchjtwF+7BOtyHDXgAD+ERPIYn8BSewXN4AS9hE17Ba/AhgC6E8Aaon+g3dzfBjw==</DocRequestKey>
+</DocumentInfo>
+  </Body>
+</GovTalkMessage>

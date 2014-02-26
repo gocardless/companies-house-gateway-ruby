@@ -1,3 +1,7 @@
+## 0.3.3 - February 25, 2014
+
+- Only return the body of the response if raw mode is false
+
 ## 0.3.2 - February 25, 2014
 
 - Check Companies House response for errors or unexpected XML

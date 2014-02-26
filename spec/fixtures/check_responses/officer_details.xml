@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<GovTalkMessage xsi:schemaLocation="http://www.govtalk.gov.uk/CM/envelope http://xmlgw.companieshouse.gov.uk/v1-1/schema/Egov_ch-v2-0.xsd" xmlns="http://www.govtalk.gov.uk/CM/envelope" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:gt="http://www.govtalk.gov.uk/schemas/govtalk/core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+  <EnvelopeVersion>1.0</EnvelopeVersion>
+  <Header>
+    <MessageDetails>
+      <Class>OfficerDetails</Class>
+      <Qualifier>response</Qualifier>
+      <TransactionID>139337262380</TransactionID>
+      <GatewayTimestamp>2014-02-25T23:57:04-00:00</GatewayTimestamp>
+    </MessageDetails>
+    <SenderDetails>
+      <IDAuthentication>
+        <SenderID>XMLGatewayTestUserID</SenderID>
+        <Authentication>
+          <Method>CHMD5</Method>
+          <Value></Value>
+        </Authentication>
+      </IDAuthentication>
+    </SenderDetails>
+  </Header>
+  <GovTalkDetails>
+    <Keys/>
+  </GovTalkDetails>
+  <Body>
+    <OfficerDetails xmlns="http://xmlgw.companieshouse.gov.uk/v1-0/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlgw.companieshouse.gov.uk/v1-0/schema http://xmlgw.companieshouse.gov.uk/v1-0/schema/OfficerDetails-v2-1.xsd">
+   <SearchRows>2</SearchRows>
+   <Person>
+      <Forename>DAVID</Forename>
+      <Surname>SMITH</Surname>
+      <Title></Title>
+      <DOB>1946-06-27</DOB>
+      <Nationality>BRITISH</Nationality>
+      <PersonAddress>
+  <AddressLine>FLAT 3 MILTON COURT ROAD</AddressLine>
+        <PostTown>LONDON</PostTown>
+        <Postcode>SE14 6JL</Postcode>
+      </PersonAddress>
+      <PersonID>CSeJxNkN1qg0AQhe/7FOJ9u2tT4hbGlZIfXJBUEnstVsd2SVzNrob49tUFG2+GM9+cwwwD4b2+ODfURjYqcL0X6jqoiqaU6idwv9L9M3OdkD/BGYex5m1rurzrDadAHs3Eu6FF7llqJZRSV41GldfIj2ITfRy3zindJdHuAGQ5nJym11YnkYhjkZysY4ajwVyFKqels4RzhtmQyazkn1UlC9RiC+QBoUWt+vqbU0rfV2/Me2VAZgYGc138pvZOsmzMIrZeecxn/mj4z5HpDX9njmly</PersonID>
+    </Person>
+  <ApptCount>
+    <NumCurrentAppt>0</NumCurrentAppt>
+    <NumDissolvedAppt>2</NumDissolvedAppt>
+    <NumResignedAppt>0</NumResignedAppt>
+  </ApptCount>
+  <OfficerAppt>
+    <CompanyName>FINEBO INTERNATIONAL LTD</CompanyName>
+    <CompanyNumber>03598690</CompanyNumber>
+    <CompanyStatus>Dissolved</CompanyStatus>
+    <AppointmentStatus>CURRENT</AppointmentStatus>
+    <AppointmentType>SEC</AppointmentType>
+    <AppointmentDate>1999-10-08</AppointmentDate>
+    <Occupation>SECRETARY</Occupation>
+  </OfficerAppt>
+  <OfficerAppt>
+    <CompanyName>FINEBO INTERNATIONAL LTD</CompanyName>
+    <CompanyNumber>03598690</CompanyNumber>
+    <CompanyStatus>Dissolved</CompanyStatus>
+    <AppointmentStatus>CURRENT</AppointmentStatus>
+    <AppointmentType>DIR</AppointmentType>
+    <AppointmentDate>1999-10-08</AppointmentDate>
+    <Occupation>SECRETARY</Occupation>
+  </OfficerAppt>
+</OfficerDetails>
+  </Body>
+</GovTalkMessage>

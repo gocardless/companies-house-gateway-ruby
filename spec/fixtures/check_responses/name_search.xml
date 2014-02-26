@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<GovTalkMessage xsi:schemaLocation="http://www.govtalk.gov.uk/CM/envelope http://xmlgw.companieshouse.gov.uk/v1-1/schema/Egov_ch-v2-0.xsd" xmlns="http://www.govtalk.gov.uk/CM/envelope" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:gt="http://www.govtalk.gov.uk/schemas/govtalk/core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+  <EnvelopeVersion>1.0</EnvelopeVersion>
+  <Header>
+    <MessageDetails>
+      <Class>NameSearch</Class>
+      <Qualifier>response</Qualifier>
+      <TransactionID>139337237538</TransactionID>
+      <GatewayTimestamp>2014-02-25T23:52:55-00:00</GatewayTimestamp>
+    </MessageDetails>
+    <SenderDetails>
+      <IDAuthentication>
+        <SenderID>XMLGatewayTestUserID</SenderID>
+        <Authentication>
+          <Method>CHMD5</Method>
+          <Value></Value>
+        </Authentication>
+      </IDAuthentication>
+    </SenderDetails>
+  </Header>
+  <GovTalkDetails>
+    <Keys/>
+  </GovTalkDetails>
+  <Body>
+    <NameSearch xmlns="http://xmlgw.companieshouse.gov.uk/v1-0/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlgw.companieshouse.gov.uk/v1-0/schema http://xmlgw.companieshouse.gov.uk/v1-0/schema/NameSearch.xsd">
+  <ContinuationKey>deeab6eJyt0WtP2zAUBuByCQ2GwbiWMTZg4yYGUkFUjGqaNKOMIqCtCuv2zTKJRaK1SRSn0H7b+K38EN7jtYixj6PSU8UnOsdvbCs7xS3ORoUrXV95VXmlNLd/U8UPrnylUyqZyoiI8VhuNS9VYgpMyDjWqUxbmmYMeZc/VUfz/kwm08dG849+NC5UbTPrRHV4bqGcr5w7dadcKTvO8VHpwvx9Pa47KGCUcEPsw1kfWm2zr2n7fBg1YxkGSpeillbFIq3PlUxcv1h0H55LMvQaKtkVeZHf3zsofDwobDeCa9WLcRpJj+Y9DUnbyqbiObvXRl+tzcyLToxjuOXMEkl0o3luYIdaLOHJFC9+cZYV0k2DKOwuugdDi2HRlKnrP88ndIfVohvO+gs7dD5+kJp4zDKvqBSEnmqr3mUM/mm10dquUXr7js4iTtT1w5WMVelKanXH+VarVJ3bT0+D/jg7Pfr+b94vjdiXuPi/cv9X8wfKDJR9AAbBgiHIgg3DwGAEXsAYjMNLmIBJmIJpmIFZyMEcvIJ5eA0L8AbewiIswTK8g/ewAquwBuuwAZtAGbdg+x4YqdJr</ContinuationKey>
+  <RegressionKey>deeab6eJyt0WtP2zAUBuByCQ2GwbiWMTZg4yYGUkFUjGqaNKOMIqCtCuv2zTKJRaK1SRSn0H7b+K38EN7jtYixj6PSU8UnOsdvbCs7xS3ORoUrXV95VXmlNLd/U8UPrnylUyqZyoiI8VhuNS9VYgpMyDjWqUxbmmYMeZc/VUfz/kwm08dG849+NC5UbTPrRHV4bqGcr5w7dadcKTvO8VHpwvx9Pa47KGCUcEPsw1kfWm2zr2n7fBg1YxkGSpeillbFIq3PlUxcv1h0H55LMvQaKtkVeZHf3zsofDwobDeCa9WLcRpJj+Y9DUnbyqbiObvXRl+tzcyLToxjuOXMEkl0o3luYIdaLOHJFC9+cZYV0k2DKOwuugdDi2HRlKnrP88ndIfVohvO+gs7dD5+kJp4zDKvqBSEnmqr3mUM/mm10dquUXr7js4iTtT1w5WMVelKanXH+VarVJ3bT0+D/jg7Pfr+b94vjdiXuPi/cv9X8wfKDJR9AAbBgiHIgg3DwGAEXsAYjMNLmIBJmIJpmIFZyMEcvIJ5eA0L8AbewiIswTK8g/ewAquwBuuwAZtAGbdg+x4YqdJr</RegressionKey>
+  <SearchRows>10</SearchRows>
+  <CoSearchItem>
+    <CompanyName>OSERVE (EUROPE) LIMITED</CompanyName>
+    <CompanyNumber>05923212</CompanyNumber>
+    <DataSet>LIVE</DataSet>
+    <CompanyIndexStatus>DISSOLVED</CompanyIndexStatus>
+    <CompanyDate></CompanyDate>
+  </CoSearchItem>
+  <CoSearchItem>
+    <CompanyName>OSES LTD.</CompanyName>
+    <CompanyNumber>05517958</CompanyNumber>
+    <DataSet>LIVE</DataSet>
+    <CompanyIndexStatus>DISSOLVED</CompanyIndexStatus>
+    <CompanyDate></CompanyDate>
+  </CoSearchItem>
+  <CoSearchItem>
+    <CompanyName>OSE SECURITY SYSTEMS LTD</CompanyName>
+    <CompanyNumber>04405658</CompanyNumber>
+    <DataSet>LIVE</DataSet>
+    <CompanyIndexStatus></CompanyIndexStatus>
+    <CompanyDate></CompanyDate>
+  </CoSearchItem>
+  <CoSearchItem>
+    <CompanyName>OSE SOLUTIONS LTD</CompanyName>
+    <CompanyNumber>08032250</CompanyNumber>
+    <DataSet>LIVE</DataSet>
+    <CompanyIndexStatus></CompanyIndexStatus>
+    <CompanyDate></CompanyDate>
+  </CoSearchItem>
+  <CoSearchItem>
+    <CompanyName>OSE SOLUTIONS LTD</CompanyName>
+    <CompanyNumber>SC300065</CompanyNumber>
+    <DataSet>LIVE</DataSet>
+    <CompanyIndexStatus>DISSOLVED</CompanyIndexStatus>
+    <CompanyDate></CompanyDate>
+  </CoSearchItem>
+  <CoSearchItem>
+    <CompanyName>OSET LTD</CompanyName>
+    <CompanyNumber>06543966</CompanyNumber>
+    <DataSet>LIVE</DataSet>
+    <CompanyIndexStatus></CompanyIndexStatus>
+    <CompanyDate></CompanyDate>
+  </CoSearchItem>
+  <CoSearchItem>
+    <CompanyName>OSETALE LIMITED</CompanyName>
+    <CompanyNumber>06835401</CompanyNumber>
+    <DataSet>LIVE</DataSet>
+    <CompanyIndexStatus>DISSOLVED</CompanyIndexStatus>
+    <CompanyDate></CompanyDate>
+  </CoSearchItem>
+  <CoSearchItem>
+    <CompanyName>OSET BIKES LIMITED</CompanyName>
+    <CompanyNumber>06302289</CompanyNumber>
+    <DataSet>LIVE</DataSet>
+    <CompanyIndexStatus></CompanyIndexStatus>
+    <CompanyDate></CompanyDate>
+  </CoSearchItem>
+  <CoSearchItem>
+    <CompanyName>OSETEX LIMITED</CompanyName>
+    <CompanyNumber>06175964</CompanyNumber>
+    <DataSet>LIVE</DataSet>
+    <CompanyIndexStatus></CompanyIndexStatus>
+    <CompanyDate></CompanyDate>
+  </CoSearchItem>
+  <CoSearchItem>
+    <CompanyName>O SET (GB) LIMITED</CompanyName>
+    <CompanyNumber>07785966</CompanyNumber>
+    <DataSet>LIVE</DataSet>
+    <CompanyIndexStatus>DISSOLVED</CompanyIndexStatus>
+    <CompanyDate></CompanyDate>
+  </CoSearchItem>
+</NameSearch>
+  </Body>
+</GovTalkMessage>

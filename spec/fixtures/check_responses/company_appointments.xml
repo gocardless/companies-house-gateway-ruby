@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<GovTalkMessage xsi:schemaLocation="http://www.govtalk.gov.uk/CM/envelope http://xmlgw.companieshouse.gov.uk/v1-1/schema/Egov_ch-v2-0.xsd" xmlns="http://www.govtalk.gov.uk/CM/envelope" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:gt="http://www.govtalk.gov.uk/schemas/govtalk/core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+  <EnvelopeVersion>1.0</EnvelopeVersion>
+  <Header>
+    <MessageDetails>
+      <Class>CompanyAppointments</Class>
+      <Qualifier>response</Qualifier>
+      <TransactionID>139337204817</TransactionID>
+      <GatewayTimestamp>2014-02-25T23:47:28-00:00</GatewayTimestamp>
+    </MessageDetails>
+    <SenderDetails>
+      <IDAuthentication>
+        <SenderID>XMLGatewayTestUserID</SenderID>
+        <Authentication>
+          <Method>CHMD5</Method>
+          <Value></Value>
+        </Authentication>
+      </IDAuthentication>
+    </SenderDetails>
+  </Header>
+  <GovTalkDetails>
+    <Keys/>
+  </GovTalkDetails>
+  <Body>
+    <CompanyAppointments xmlns="http://xmlgw.companieshouse.gov.uk/v1-0/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlgw.companieshouse.gov.uk/v1-0/schema http://xmlgw.companieshouse.gov.uk/v1-0/schema/CompanyAppointments-v2-1.xsd">
+  <CompanyName>MILLENNIUM STADIUM PLC</CompanyName>
+  <CompanyNumber>03176906</CompanyNumber>
+  <NumCurrentAppt>12</NumCurrentAppt>
+  <NumResignedAppt>34</NumResignedAppt>
+  <SearchRows>12</SearchRows>
+  <CoAppt>
+    <Person>
+      <Forename>RICHARD STEPHEN</Forename>
+      <Surname>PHILLIPS</Surname>
+      <Title></Title>
+      <DOB>1964-04-01</DOB>
+      <Nationality>BRITISH</Nationality>
+      <CountryOfResidence>UK</CountryOfResidence>
+      <PersonAddress>
+        <AddressLine>BEDWEN NEWTOWN</AddressLine>
+        <PostTown>AMMANFORD</PostTown>
+        <County>CARMARTHENSHIRE</County>
+        <Country></Country>
+        <Postcode>SA18 3TE</Postcode>
+      </PersonAddress>
+      <PersonID>CSeJxNkN1qg0AQhe/7FOJ9u2tT4hbGlZIfXJBUEnstVsd2SVzNrob49tUFG2+GM9+cwwwD4b2+ODfURjYqcL0X6jqoiqaU6idwv9L9M3OdkD/BGYex5m1rurzrDadAHs3Eu6FF7llqJZRSV41GldfIj2ITfRy3zindJdHuAGQ5nJym11YnkYhjkZysY4ajwVyFKqels4RzhtmQyazkn1UlC9RiC+QBoUWt+vqbU0rfV2/Me2VAZgYGc138pvZOsmzMIrZeecxn/mj4z5HpDX9njmly</PersonID>
+    </Person>
+    <NumAppointments>16</NumAppointments>
+    <AppointmentType>SEC</AppointmentType>
+    <AppointmentStatus>CURRENT</AppointmentStatus>
+    <AppointmentDate>2009-08-27</AppointmentDate>
+    <Occupation>GROUP FINANCE DIRECTOR</Occupation>
+  </CoAppt>
+  <CoAppt>
+    <Person>
+      <Forename>MARIA</Forename>
+      <Surname>BATTLE</Surname>
+      <Title>MISS</Title>
+      <DOB>1957-02-08</DOB>
+      <Nationality>BRITISH</Nationality>
+      <CountryOfResidence>WALES</CountryOfResidence>
+      <PersonAddress>
+        <CareOfName>CHAIR AND CHIEF EXECUTIVE'S OFFICE</CareOfName>
+        <AddressLine>CARDIFF AND VALE UNIVERSITY HEALTH BOARD HQ PARK R</AddressLine>
+        <AddressLine>WHITCHURCH</AddressLine>
+        <PostTown>CARDIFF</PostTown>
+        <County></County>
+        <Country>WALES</Country>
+        <Postcode>CF14 7XB</Postcode>
+      </PersonAddress>
+      <PersonID>CSeJxNj08LgkAQxe99CvFe67+DwbhiVCAUQdhZTMdazNV2NfLbty6YXoY3v8fjzUD4rV/GB4VkDQ9Me2OZBvK8KRh/BOYtOa590wjpCioc1MzaVnZZ10tqAZmXkXdDi9TRVEsomCgbgTyrkZ6jaxwBWaLRl73Qehclyemg/QkpW75jXoxFk4QqxXRIWVrQS1myHEW8BzJDaFHwvr5T17I823W2jgdkYiAxE/kz0beR5SIXMde1fc9XsT9UBer1Hw4GZfM=</PersonID>
+    </Person>
+    <NumAppointments>1</NumAppointments>
+    <AppointmentType>DIR</AppointmentType>
+    <AppointmentStatus>CURRENT</AppointmentStatus>
+    <AppointmentDate>2013-04-25</AppointmentDate>
+    <Occupation>SOLICITOR</Occupation>
+  </CoAppt>
+  <CoAppt>
+    <Person>
+      <Forename>MALDWYN</Forename>
+      <Surname>BEYNON</Surname>
+      <Title></Title>
+      <DOB>1932-12-03</DOB>
+      <Nationality>BRITISH</Nationality>
+      <CountryOfResidence>WALES</CountryOfResidence>
+      <PersonAddress>
+        <AddressLine>6 BIRCH GROVE</AddressLine>
+        <PostTown>BRYNMAWR</PostTown>
+        <County>GWENT</County>
+        <Country></Country>
+        <Postcode>NP23 4TD</Postcode>
+      </PersonAddress>
+      <PersonID>CSeJxNj08LgkAQxe99CvFeu9vBDMaVogKhP5ciPInpWIu52q5GfvvUML0M7/1mHjMD7id7Gm9UWuTSMdmMmgbKKI+FvDvm5byb2qbh8gmkWDc1LApdhmWlOQUymJaXdYF83tFOQixUkiuUYYb8sNpvrv4RyBi2E7pSnV5v/ePp1+9R09YvT8btql5CGmBQByKI+SlJRITK2wAZIBSoZJXdOKXUtudswRiQnoHGUEWPc3cdGRs9xBhd0qVlWc3AP0fa57/kkGa3</PersonID>
+    </Person>
+    <NumAppointments>4</NumAppointments>
+    <AppointmentType>DIR</AppointmentType>
+    <AppointmentStatus>CURRENT</AppointmentStatus>
+    <AppointmentDate>2001-08-02</AppointmentDate>
+    <Occupation>FINANCIAL ARRANGER</Occupation>
+  </CoAppt>
+  <CoAppt>
+    <Person>
+      <Forename>MARTIN RODNEY</Forename>
+      <Surname>DAVIES</Surname>
+      <Title>MR</Title>
+      <DOB>1942-05-17</DOB>
+      <Nationality>BRITISH</Nationality>
+      <CountryOfResidence>WALES</CountryOfResidence>
+      <PersonAddress>
+        <AddressLine>FERNDALE</AddressLine>
+        <AddressLine>TY DRAW ROAD LISVANE</AddressLine>
+        <PostTown>CARDIFF</PostTown>
+        <County>SOUTH GLAMORGAN</County>
+        <Country></Country>
+        <Postcode>CF14 0PF</Postcode>
+      </PersonAddress>
+      <PersonID>CSeJxNkE8LgkAQxe99CvFeu0p/DKaNQAMPFZQFncR0rMVcbVcjv326YHkZ3vzeG2YYWH/yp/FGqXghVqY1oaaBIi4SLu4r8xxsx45prNkIMmzaGpWlqqKqVowC+Tcdr5oSma2plpBwmRYSRZQj222Ogb83jgd3712BDK0up2qptbu5+N5J+z1qbfXyRdIt7CVkIYZNyMOEHdKUxyh9F8gfQolS1PmNUWpN5wtqzSwgPQOFkYwfgb6RDBs1GLNnztKxnTbwmyPdC77xW2hL</PersonID>
+    </Person>
+    <NumAppointments>14</NumAppointments>
+    <AppointmentType>DIR</AppointmentType>
+    <AppointmentStatus>CURRENT</AppointmentStatus>
+    <AppointmentDate>2003-08-07</AppointmentDate>
+    <Occupation>RETIRED CHARTERED ACCOUNTANTS</Occupation>
+  </CoAppt>
+  <CoAppt>
+    <Person>
+      <Forename>ALED</Forename>
+      <Surname>EDWARDS</Surname>
+      <Title>REV</Title>
+      <DOB>1955-10-04</DOB>
+      <Nationality>BRITISH</Nationality>
+      <CountryOfResidence>UNITED KINGDOM</CountryOfResidence>
+      <PersonAddress>
+        <AddressLine>20 HILLTOP AVENUE</AddressLine>
+        <AddressLine>CILFYNYDD</AddressLine>
+        <PostTown>PONTYPRIDD</PostTown>
+        <County>MID GLAMORGAN</County>
+        <Country>WALES</Country>
+        <Postcode>CF37 4HZ</Postcode>
+      </PersonAddress>
+      <PersonID>CSeJxNj9sKgkAQhu97CvG+du3oxbgiWBAEQQe6FNOxFnO1XY18+9YF05vhn++fI/jf4mV9UCpeCs92ZtS2UCRlysXDs6+X3dS1LZ9NIMdWx7iqVB3XjWIUyJB0vG4rZHNDjYSUy6yUKOICWXDYhkDGpLNVI43ehrfgFJ5NQc+0r957kXaLegl5hFEb8ShlxyzjCcq9njpAqFCKprgzSh26pgsdgfQMFMYyeV7MbWScqHGbu6HL1UYX/PtI9/oPBhJl2g==</PersonID>
+    </Person>
+    <NumAppointments>4</NumAppointments>
+    <AppointmentType>DIR</AppointmentType>
+    <AppointmentStatus>CURRENT</AppointmentStatus>
+    <AppointmentDate>2013-04-25</AppointmentDate>
+    <Occupation>CHIEF EXECUTIVE</Occupation>
+  </CoAppt>
+  <CoAppt>
+    <Person>
+      <Forename>GERAINT</Forename>
+      <Surname>EDWARDS</Surname>
+      <Title></Title>
+      <DOB>1940-09-21</DOB>
+      <Nationality>BRITISH</Nationality>
+      <CountryOfResidence>WALES</CountryOfResidence>
+      <PersonAddress>
+        <AddressLine>6 HENDREMAWR CLOSE</AddressLine>
+        <AddressLine>SKETTY</AddressLine>
+        <PostTown>SWANSEA</PostTown>
+        <County>WEST GLAMORGAN</County>
+        <Country></Country>
+        <Postcode>SA2 9ND</Postcode>
+      </PersonAddress>
+      <PersonID>CSeJxNj08PgjAMxe9+CsJdt/kXkzJjghoumijGI0EouigDNzDy7YUlKJfm9df30hZWn+xpvVFpkUvXZiNqWyjjPBHy5trnYDt0bGvFB/DAuqlRUegyKivNKZB/0/KyLpCPDTUSEqHSXKGMMuS7zXHt7wMgfdg6dKWM3niX9dE7GUPHmrl++TJpd3USHiGGdSjChB/SVMSofA/IH0KBSlbZlVPKHEYnS7YA0jHQGKn4HpjzSL/RvdicTWfOmDWGX460338BLm9m3Q==</PersonID>
+    </Person>
+    <NumAppointments>3</NumAppointments>
+    <AppointmentType>DIR</AppointmentType>
+    <AppointmentStatus>CURRENT</AppointmentStatus>
+    <AppointmentDate>2006-12-28</AppointmentDate>
+    <Occupation>RETIRED ENGINEER</Occupation>
+  </CoAppt>
+  <CoAppt>
+    <Person>
+      <Forename>RUSSELL</Forename>
+      <Surname>GOODWAY</Surname>
+      <Title>MR</Title>
+      <DOB>1955-12-23</DOB>
+      <Nationality>BRITISH</Nationality>
+      <CountryOfResidence>UNITED KINGDOM</CountryOfResidence>
+      <PersonAddress>
+        <AddressLine>MILLENNIUM STADIUM</AddressLine>
+        <AddressLine>WESTGATE STREET</AddressLine>
+        <PostTown>CARDIFF</PostTown>
+        <County></County>
+        <Country></Country>
+        <Postcode>CF10 1NS</Postcode>
+      </PersonAddress>
+      <PersonID>CSeJxNj90KgkAQhe97CvG+VjP7gWkjsEIIhEyiKzEdaylX29XIt08XTG+GM9+cw8zA5pu9tA8KyXK+1s2JoWvI4zxh/L7Wg/N+vNS1DR3BE+umRkUhy6isJDWA9E3Ly7pAOlVUSUiYSHOBPMqQngLf3x2PQIawdchKKH3wPOeyvSpDx5q5fLs8aXd1Ep4hhnXIwoR6acpiFK4DpIdQoOBVdqOGYdrWdG4tF0A6BhIjET/O6jwybOQgZtlz01zNGsM/R9rvf1KAZxQ=</PersonID>
+    </Person>
+    <NumAppointments>5</NumAppointments>
+    <AppointmentType>DIR</AppointmentType>
+    <AppointmentStatus>CURRENT</AppointmentStatus>
+    <AppointmentDate>2012-06-21</AppointmentDate>
+    <Occupation>POLITICIAN</Occupation>
+  </CoAppt>
+  <CoAppt>
+    <Person>
+      <Forename>MARK JONATHAN</Forename>
+      <Surname>HALLETT</Surname>
+      <Title>MR</Title>
+      <DOB>1961-07-18</DOB>
+      <Nationality>BRITISH</Nationality>
+      <CountryOfResidence>UNITED KINGDOM</CountryOfResidence>
+      <PersonAddress>
+        <AddressLine>5 LONGHOUSE CLOSE</AddressLine>
+        <AddressLine>LISVANE</AddressLine>
+        <PostTown>CARDIFF</PostTown>
+        <County></County>
+        <Country>WALES</Country>
+        <Postcode>CF14 0XR</Postcode>
+      </PersonAddress>
+      <PersonID>CSeJxNkN0KgkAQhe97CvG+drUIg2lDqOg/iO1aTMdaytV2NfLt0wXTm+HMN+cww8Dim76sDyotMjm3nRG1LZRRFgt5n9tXvh56trVgA3hiVdcwz3URFqVmFEjXNLyocmSuoUZCLFSSKZRhiuzoX/bW7nzy+cY/AemPGp8uldEb/3BYcW4MLavn+r2VcbOxlfAMMKgCEcTsnCQiQrVdAukg5Khkmd4YpS4de+50VodbBhpDFT24OZL0G93FHM+dOd50Uhv+OdL84AdAV2iA</PersonID>
+    </Person>
+    <NumAppointments>3</NumAppointments>
+    <AppointmentType>DIR</AppointmentType>
+    <AppointmentStatus>CURRENT</AppointmentStatus>
+    <AppointmentDate>2013-04-25</AppointmentDate>
+    <Occupation>PROPERTY DEVELOPER AND INVESTOR</Occupation>
+  </CoAppt>
+  <CoAppt>
+    <Person>
+      <Forename>KENNETH JAMES</Forename>
+      <Surname>HEWITT</Surname>
+      <Title></Title>
+      <DOB>1936-07-09</DOB>
+      <Nationality>BRITISH</Nationality>
+      <CountryOfResidence>WALES</CountryOfResidence>
+      <PersonAddress>
+        <AddressLine>GREEN MEADOWS</AddressLine>
+        <AddressLine>LLANFIHANGEL CRUCORNEY</AddressLine>
+        <PostTown>ABERGAVENNY</PostTown>
+        <County>MONMOUTHSHIRE</County>
+        <Country></Country>
+        <Postcode>NP7 7LB</Postcode>
+      </PersonAddress>
+      <PersonID>CSeJxNkFGrgkAQhd/7FeL7bdcLocK0ceEaWVQPbfQopmMt5Wq7GvnvWxfMXoYz35nhDAOLV3l3nqi0qOTc9abUdVBmVS7kZe4e+fIncJ0Fm8ANO1PTutZN2rSaUSBj0/Omq5H9Wmol5EIVlUKZlsg20W4X8ZWz/ttGByDfVj+nW2X1KjrFnFt/QMbWj1jmfeAg4ZZg0iUiydm+KESGKv4HMkKoUcm2PDNKPRr6fkB9IAMDjanKrtzeSL4bPa7RMAwCb2bWPtAEmBe8Ae4eaFc=</PersonID>
+    </Person>
+    <NumAppointments>2</NumAppointments>
+    <AppointmentType>DIR</AppointmentType>
+    <AppointmentStatus>CURRENT</AppointmentStatus>
+    <AppointmentDate>1996-11-20</AppointmentDate>
+    <Occupation>RETIRED HEADTEACHER</Occupation>
+  </CoAppt>
+  <CoAppt>
+    <Person>
+      <Forename>ROGER CHARLES</Forename>
+      <Surname>LEWIS</Surname>
+      <Title>MR</Title>
+      <DOB>1954-08-24</DOB>
+      <Nationality>BRITISH</Nationality>
+      <CountryOfResidence>UNITED KINGDOM</CountryOfResidence>
+      <PersonAddress>
+        <AddressLine>VILLAGE FARM</AddressLine>
+        <PostTown>ST HILARY</PostTown>
+        <County>VALE OF GLAMORGAN</County>
+        <Country></Country>
+        <Postcode>CF71 7DP</Postcode>
+      </PersonAddress>
+      <PersonID>CSeJxNkEELgkAQhe/9CvFeu2ZUwrQSZSUEgRUdxXSspVxtVyP/fWqYXoY333vDDAP2J3lqb5SKp2KhGyOqayjCNOLittDPp81wrms2G8ADy6oGWabyIC8Uo0C6puZ5mSEbN7SREHEZpxJFkCDzDlvH01a7pbd3jkD6Vp1ThWz03rm4P7sllaterojqfa2Eh49+6XM/Yoc45iFKdw2kg5ChFEVyZZRSazqxxpYBpGWgMJDh/dScSPqN6o3NqWnODKsK/OdI/YEvjAln+w==</PersonID>
+    </Person>
+    <NumAppointments>31</NumAppointments>
+    <AppointmentType>DIR</AppointmentType>
+    <AppointmentStatus>CURRENT</AppointmentStatus>
+    <AppointmentDate>2006-09-19</AppointmentDate>
+    <Occupation>GCEO WRU</Occupation>
+  </CoAppt>
+  <CoAppt>
+    <Person>
+      <Forename>PAUL</Forename>
+      <Surname>ORDERS</Surname>
+      <Title>MR</Title>
+      <DOB>1968-12-21</DOB>
+      <Nationality>BRITISH</Nationality>
+      <CountryOfResidence>WALES</CountryOfResidence>
+      <PersonAddress>
+        <AddressLine>MILLENNIUM STADIUM</AddressLine>
+        <AddressLine>WESTGATE STREET</AddressLine>
+        <PostTown>CARDIFF</PostTown>
+        <County></County>
+        <Country></Country>
+        <Postcode>CF10 1NS</Postcode>
+      </PersonAddress>
+      <PersonID>CSeJxNj0ELgkAQhe/9CvFeu6VkwrgSWCAEhtVZTMdaytV2NfLfpwuWl+G9780wM+B/yqfxRql4JTxzuaCmgSKrci5unnk57+cb0/DZDB7Y9TWta9WkTasYBfI3A2+6GtlKUy0h57KoJIq0RHbcXg5ApmSIVSu1juJgF590PqI+Vq9Q5MOeUcIjwaRLeJKzqCh4hjIMgPwh1ChFW16ZRantUmfl2kBGBgpTmd3P+jQyNWoyZrmWYzvrvuE3R4bPv8/lZeA=</PersonID>
+    </Person>
+    <NumAppointments>1</NumAppointments>
+    <AppointmentType>DIR</AppointmentType>
+    <AppointmentStatus>CURRENT</AppointmentStatus>
+    <AppointmentDate>2014-01-17</AppointmentDate>
+    <Occupation>CHIEF EXECUTIVE</Occupation>
+  </CoAppt>
+  <CoAppt>
+    <Person>
+      <Forename>DAVID FRANCIS</Forename>
+      <Surname>PICKERING</Surname>
+      <Title>MR</Title>
+      <DOB>1960-12-16</DOB>
+      <Nationality>BRITISH</Nationality>
+      <CountryOfResidence>WALES</CountryOfResidence>
+      <PersonAddress>
+        <AddressLine>18 QUEEN ANNE SQUARE</AddressLine>
+        <AddressLine>CATHAYS</AddressLine>
+        <PostTown>CARDIFF</PostTown>
+        <County></County>
+        <Country></Country>
+        <Postcode>CF10 3ED</Postcode>
+      </PersonAddress>
+      <PersonID>CSeJxNkE8PgjAMxe9+CsJdN9QghzpjRM1iosZ/V4JQdFEGbmDk2wtLEC/N66/vpU1h9kmf1huVFpmc2s6A2hbKKIuFvE3t82nV92xrxnrwwKquYZ7rIixKzSiQrml4UeXIhoYaCbFQSaZQhikyf37hvrU6zLcLfgTyP2p8ulRG7/liszzw7dpYWlo79IvLuNnZSngEGFSBCGK2SxIRoeI+kA5CjkqW6ZVRSj3Hdd2JB6RloDFU0f1kziT/je5ijjMeUs8d1YZfjjRf+ALzIWj8</PersonID>
+    </Person>
+    <NumAppointments>34</NumAppointments>
+    <AppointmentType>DIR</AppointmentType>
+    <AppointmentStatus>CURRENT</AppointmentStatus>
+    <AppointmentDate>1998-10-21</AppointmentDate>
+    <Occupation>COMPANY DIRECTOR</Occupation>
+  </CoAppt>
+</CompanyAppointments>
+  </Body>
+</GovTalkMessage>

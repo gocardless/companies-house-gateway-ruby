@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<GovTalkMessage xsi:schemaLocation="http://www.govtalk.gov.uk/CM/envelope http://xmlgw.companieshouse.gov.uk/v1-1/schema/Egov_ch-v2-0.xsd" xmlns="http://www.govtalk.gov.uk/CM/envelope" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:gt="http://www.govtalk.gov.uk/schemas/govtalk/core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+  <EnvelopeVersion>1.0</EnvelopeVersion>
+  <Header>
+    <MessageDetails>
+      <Class>OfficerSearch</Class>
+      <Qualifier>response</Qualifier>
+      <TransactionID>139337270489</TransactionID>
+      <GatewayTimestamp>2014-02-25T23:58:26-00:00</GatewayTimestamp>
+    </MessageDetails>
+    <SenderDetails>
+      <IDAuthentication>
+        <SenderID>XMLGatewayTestUserID</SenderID>
+        <Authentication>
+          <Method>CHMD5</Method>
+          <Value></Value>
+        </Authentication>
+      </IDAuthentication>
+    </SenderDetails>
+  </Header>
+  <GovTalkDetails>
+    <Keys/>
+  </GovTalkDetails>
+  <Body>
+    <OfficerSearch xmlns="http://xmlgw.companieshouse.gov.uk/v1-0/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlgw.companieshouse.gov.uk/v1-0/schema http://xmlgw.companieshouse.gov.uk/v1-0/schema/OfficerSearch-v2-3.xsd">
+  <ContinuationKey>8b04caeJyl0d9v0zAQB/DCSJt5RQwGlN8wGD+GFCm0WWF59B4oYmxoA8Gb5caXJdqahDgR9A34y/meh0Q18YBEpI8U++zz+ez11qQnRV8lOsnIvNdHZKX/Qwpf6apq5hVJ0eF4lh9lZBte4OIrqsLvXjubUu0mBG+wjW7a0wRdMz2muZXnO53OOdEPFz7OV9A3l+wtzeUA0VEYRltRtD1GtKuSAom5MN8d4xbt7ZSzShc52UnZWorj/TTNE6oPSddJFsfl4nCiC3OCwSxvMjXJ6/I4V2HwtyJ2S204/9kSuQg9Iy6ip1L+HbpWeKptcyPFxigKo/RVqgMKaRxsj4YmSIeUBBGZl1tTGk0pHEuxrKrSNk35tVjI9EIOuqdF8Q1tW7uThOfK5SmT2y9vCiP979xp6670gR/D44xpWZPb8SdLX/2+vls1WNr5ePAzPtuwz+92X3/6p779x9ZNfm/gd1+CC+BBF3rgwzIIWIE+XIRLsAqX4QqswVW4BtdhADfgJtyC23AH7sI9uA8PYB0ewiPYgMfwBJ7CM+D6nv8CZq68RQ==</ContinuationKey>
+  <SearchRows>28</SearchRows>
+  <OfficerSearchItem>
+    <Title>,MRS</Title>
+    <Surname>SMITH</Surname>
+    <Forename>HILARY SALLY LOUISE</Forename>
+    <DOB>1951-10-04</DOB>
+    <PostTown>MINEHEAD</PostTown>
+    <Postcode>TA24 </Postcode>
+    <CountryOfResidence>UNITED KINGDOM</CountryOfResidence>
+    <PersonID>CSeJxNkMtugzAQRff9CsS6FGNoAMlxFKmtQCKKFMgiK8RjSC3CozZU5e+LIYRsrLnn3PFiyO6vuim/wAVr6q1qvCFVgTprclZft+o5+tIcVdnRF1LCML5J24ou6XpBDaKvQfJuaIFOcJ5yxos6qcCgHuNNyYi+kofEdMV4xg0HmajnB/vTRQn3QXBRguPZDz/n7lKQbdHzaQ4PfuRNeiHSdqy7AX09nMJJzXEU4sevc4oknEdSxhAPMYtzeiwKlgH3P4i+QtImV5AXMC1kFU6RaIBgo7kmzrUCQ6ZZkNvvKZgpoA3RlzZpgdd9lVITIdNykWnYo7wzIiDh2Xc0n+05iKc1bLsOws5YeOzp8ut/KKOWCQ==</PersonID>
+    </OfficerSearchItem>
+  <OfficerSearchItem>
+    <Title></Title>
+    <Surname>SMITH</Surname>
+    <Forename>HILARY THERESE</Forename>
+    <DOB>1943-09-21</DOB>
+    <PostTown>CHELMSFORD</PostTown>
+    <Postcode>CM1 </Postcode>
+    <CountryOfResidence>UNITED KINGDOM</CountryOfResidence>
+    <PersonID>CSeJxNkEtvgzAQhO/9FYg7xTwCieQ4qlQqkFpVSuihJ2TwOrUIj9pQlX/fGIfQizXzzXilXXz4bS7WD0glunZve4/ItqCtOiba897+yF+crW0dyAOuYbq+tO/VQIdREQ+7q9F8mHogMzSKCclb2oBHUiG7WmB3JffQJyv2De4kaEfS7PXp+GnlaXJMTompLZkuqlHO+vSW5ekcL0SngxguYIbfJBPqO2sZQRoaiesCiqkQBSPvnIsKZPaM3RXinp5BLx6EKORbTh1AEDm7wGcO96FyQmDxpoSgBBRhd2njHmQ7NiXZRX7keddLLQAroLL6ys2p/hu1VDwUx0Ecba7x/Zerp/4BtBeSjg==</PersonID>
+    </OfficerSearchItem>
+  <OfficerSearchItem>
+    <Title>,MISS</Title>
+    <Surname>SMITH</Surname>
+    <Forename>HILARY ZOE</Forename>
+    <DOB>1965-07-31</DOB>
+    <PostTown>LONDON</PostTown>
+    <Postcode>N4 </Postcode>
+    <CountryOfResidence>ENGLAND</CountryOfResidence>
+    <PersonID>CSeJxNkF1PgzAYhe/9FYRrkfIxBknXxUQNJC5LZF7oDSn0ZTaMD1sw8u8tVMZumnOec943bfH+t74YPyAkb5ud6Twg04CmaBlvzjvz/fRihaaxJ3e4glGdtOtkT/tBEgfbq5l4P3ZAZqgV46JsaA0OibloK47tlVxDl6zY1bgVMDkSJ6+Pbx/G5/FZVxY+leQgZp0eklM8xwuZ0p73FyD3hyRN50x7lcjvpGEETVBLXGWQjRnPGDmWJS9AJE/YXiHu6Bmml3s+8suwpBYgCKzIc5lVulBYPrDtJgcvBxRge2njDkQz1DnxEPI3W+SjUIX/DEugovg66e+6NfJmzAuCKPLV2BWqe6nVfwhVk9U=</PersonID>
+    </OfficerSearchItem>
+  <OfficerSearchItem>
+    <Title>,MISS</Title>
+    <Surname>SMITH</Surname>
+    <Forename>HILARY ZOE</Forename>
+    <DOB></DOB>
+    <PostTown>LONDON</PostTown>
+    <Postcode>N4 </Postcode>
+    <PersonID>CSeJxNkF1rgzAUhu/3K8TrOeNnK6Qpg20orBRmd7HdSNSTLlijS3TMfz+js/YmnPd53hNI8P63vhg/IBVvxM50HpBpgCiakovzznw/vVhb09iTO1zBMJ60bVVHu14RB9tr0LwbWiATnKeSSyZoDQ6JuWwqju2VXKVLVuzOuJGgE4mT18e3D+Pz+DxXFq5LqpfTnB6SUzzphWjb8e4C5P6QpOnk5jwa9Z2IkiAN5xFXGWRDxrOSHBnjBcjkCdsrxC09g3655yOfbRm1AEFoRZ5bWsyFwvKh3AQ5eDmgENtLG7cgRV/nxEPIDzbId/xR/jOsgMri6zR/121QN2teGEZR4I2F656tr/4DBzSTzg==</PersonID>
+    </OfficerSearchItem>
+  <OfficerSearchItem>
+    <Title></Title>
+    <Surname>SMITH</Surname>
+    <Forename>HILDA</Forename>
+    <DOB>1954-05-29</DOB>
+    <PostTown>GLASGOW</PostTown>
+    <Postcode>G3 </Postcode>
+    <CountryOfResidence>SCOTLAND</CountryOfResidence>
+    <PersonID>CSeJxNkMFuhCAQhu99CuPdCmK3a8KyabJpNGnTQ+3ZoAxb4ooWtKlvX9F13Qv55/tgMgw9/jUX7xeMVa0++PgR+R7oqhVKnw/+V/4a7H3vyB5oDeN08q6zPe8HyzANt8LxfuyAzXBJQhmpeQOYpcq0taLhRm4yYhuOFtwacBVLs7fTy2JX5LwdzJw/37M8nfVKnO1Vf4Gl5zUKZX8yLRhycIm0LqAYC1UI9iGlqsBkJxpukHb8DO6/JEax3EseAIJdkJBIBDKCKohBPD+VQEpAOxqut2kHRg9NyQhCGO8Jwskkr4xa4Kb6zpcl3Rf27hlKooSQabU3OM01tf4Hxi+Q4Q==</PersonID>
+    <DuplicateOfficers>
+        <DuplicateOfficerSearchItem>
+           <Title></Title>
+           <Surname>SMITH</Surname>
+           <Forename>HILDA</Forename>
+           <DOB>1954-05-29</DOB>
+           <PostTown>PRESTWICK</PostTown>
+           <Postcode>KA9 </Postcode>
+           <CountryOfResidence>SCOTLAND</CountryOfResidence>
+        </DuplicateOfficerSearchItem>
+    </DuplicateOfficers>
+    </OfficerSearchItem>
+</OfficerSearch>
+  </Body>
+</GovTalkMessage>

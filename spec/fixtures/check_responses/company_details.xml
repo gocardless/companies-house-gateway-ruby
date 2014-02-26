@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<GovTalkMessage xsi:schemaLocation="http://www.govtalk.gov.uk/CM/envelope http://xmlgw.companieshouse.gov.uk/v1-1/schema/Egov_ch-v2-0.xsd" xmlns="http://www.govtalk.gov.uk/CM/envelope" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:gt="http://www.govtalk.gov.uk/schemas/govtalk/core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+  <EnvelopeVersion>1.0</EnvelopeVersion>
+  <Header>
+    <MessageDetails>
+      <Class>CompanyDetails</Class>
+      <Qualifier>response</Qualifier>
+      <TransactionID>139337201255</TransactionID>
+      <GatewayTimestamp>2014-02-25T23:46:52-00:00</GatewayTimestamp>
+    </MessageDetails>
+    <SenderDetails>
+      <IDAuthentication>
+        <SenderID>XMLGatewayTestUserID</SenderID>
+        <Authentication>
+          <Method>CHMD5</Method>
+          <Value></Value>
+        </Authentication>
+      </IDAuthentication>
+    </SenderDetails>
+  </Header>
+  <GovTalkDetails>
+    <Keys/>
+  </GovTalkDetails>
+  <Body>
+    <CompanyDetails xmlns="http://xmlgw.companieshouse.gov.uk/v1-0/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlgw.companieshouse.gov.uk/v1-0/schema http://xmlgw.companieshouse.gov.uk/v1-0/schema/CompanyDetails-v2-1.xsd">
+  <CompanyName>MILLENNIUM STADIUM PLC</CompanyName>
+  <CompanyNumber>03176906</CompanyNumber>
+  <RegAddress>
+    <AddressLine>MILLENNIUM STADIUM</AddressLine>
+    <AddressLine>WESTGATE STREET</AddressLine>
+    <AddressLine>CARDIFF</AddressLine>
+    <AddressLine>CF10 1NS</AddressLine>
+  </RegAddress>
+  <CompanyCategory>Public Limited Company</CompanyCategory>
+  <CompanyStatus>Active</CompanyStatus>
+  <CountryOfOrigin>United Kingdom</CountryOfOrigin>
+  <RegDateType>0</RegDateType>
+  <IncorporationDate>1996-03-25</IncorporationDate>
+  <Accounts>
+    <AccountRefDate>30-06</AccountRefDate>
+    <NextDueDate>2014-12-31</NextDueDate>
+    <Overdue>NO</Overdue>
+    <LastMadeUpDate>2013-06-30</LastMadeUpDate>
+    <AccountCategory>FULL</AccountCategory>
+    <DocumentAvailable>1</DocumentAvailable>
+  </Accounts>
+  <Returns>
+    <NextDueDate>2014-04-22</NextDueDate>
+    <Overdue>NO</Overdue>
+    <LastMadeUpDate>2013-03-25</LastMadeUpDate>
+    <DocumentAvailable>1</DocumentAvailable>
+  </Returns>
+  <SICCodes>
+          <SicText>93110 - Operation of sports facilities</SicText>
+  </SICCodes>
+  <LastFullMemDate>2013-03-25</LastFullMemDate>
+  <HasUKestablishment>0</HasUKestablishment>
+  <HasAppointments>1</HasAppointments>
+  <InLiquidation>0</InLiquidation>
+</CompanyDetails>
+  </Body>
+</GovTalkMessage>
