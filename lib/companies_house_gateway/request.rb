@@ -79,6 +79,7 @@ module CompaniesHouseGateway
     end
 
     def request_body(xml, request_type, search_data)
+      request_type = "CompanyAppt" if request_type == "CompanyAppointments"
       xml.send("#{request_type}Request", request_namespace(request_type)) do
         search_data.each do |key, value|
           if value

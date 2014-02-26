@@ -23,7 +23,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="CompanyAppointmentsRequest">
+  <xs:element name="CompanyApptRequest">
     <xs:annotation>
       <xs:documentation>Company Appointments Request</xs:documentation>
     </xs:annotation>
