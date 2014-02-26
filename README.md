@@ -55,3 +55,12 @@ Set the "raw" argument to true if you need the full, unprocessed response
 CompaniesHouseGateway.config[:raw] = true
 CompaniesHouseGateway.name_search(...)         # => Faraday::Response object
 ```
+
+### Caching
+
+If you'd like to cache your requests, you can configure the gem:
+
+```ruby
+CompaniesHouseGateway.config[:cache] = Rails.cache
+CompaniesHouseGateway.config[:cache_args] = { expires_in: 10.minutes }
+```

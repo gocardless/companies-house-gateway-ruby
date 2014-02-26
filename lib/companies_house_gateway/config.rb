@@ -5,6 +5,8 @@ module CompaniesHouseGateway
       sender_id:        nil,
       password:         nil,
       email:            nil,
+      cache:            nil,
+      cache_args:       nil,
       raw:              false,
       api_endpoint:     "http://xmlgw.companieshouse.gov.uk/v1-0/xmlgw/Gateway",
       user_agent:       "CompaniesHouseGateway Ruby Gem #{CompaniesHouseGateway::VERSION}".freeze

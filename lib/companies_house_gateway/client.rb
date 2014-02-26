@@ -5,8 +5,10 @@ module CompaniesHouseGateway
     end
 
     def perform_check(*args)
-      request = Request.new(connection, @config)
-      request.perform(*args)
+      with_caching(args) do
+        request = Request.new(connection, @config)
+        request.perform(*args)
+      end
     end
 
     def config
@@ -41,6 +43,13 @@ module CompaniesHouseGateway
         c.response :raise_error                             # Raise errors
         c.adapter @config[:adapter]
       end
+    end
+
+    # Use cache if configured
+    def with_caching(args, &block)
+      cache_args = config[:cache_args] || {}
+      cache = config[:cache]
+      cache ? cache.fetch(args, cache_args, &block) : yield
     end
   end
 end

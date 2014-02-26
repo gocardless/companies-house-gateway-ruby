@@ -43,6 +43,16 @@ describe CompaniesHouseGateway::Client do
         to receive(:perform).once
       client.perform_check({})
     end
+
+    context "if caching is enabled" do
+      let(:cached_response) { double("Cached response") }
+      let(:cache_stub) { double("Cache", fetch: cached_response) }
+      before { config[:cache] = cache_stub }
+
+      it "caches the request (if enabled)" do
+        client.perform_check({}) == cached_response
+      end
+    end
   end
 
   it_behaves_like "it delegates to the check", :name_search
