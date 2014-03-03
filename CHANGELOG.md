@@ -1,3 +1,7 @@
+## 0.3.6 - March 3, 2014
+
+- Add error_code attribute to APIError
+
 ## 0.3.5 - February 26, 2014
 
 - Allow requests to be cached
