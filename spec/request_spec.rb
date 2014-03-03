@@ -79,8 +79,10 @@ describe CompaniesHouseGateway::Request do
 
           it "wraps the error" do
             expect { perform_check }.
-              to raise_error(
-                CompaniesHouseGateway::APIError, "(604) Error text")
+              to raise_error CompaniesHouseGateway::APIError do |error|
+                error.error_code.should == "604"
+                error.message.should == "Error text"
+              end
           end
         end
 
