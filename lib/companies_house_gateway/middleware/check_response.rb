@@ -3,24 +3,25 @@ module CompaniesHouseGateway
     class CheckResponse < Faraday::Middleware
       def call(env)
         @app.call(env).on_complete do |env|
-          response_body = env[:body]["GovTalkMessage"]
-
-          unless response_body && response_body["GovTalkDetails"]
-            raise InvalidResponseError.new(nil, env[:status], env)
-          end
-
-          if errors = response_body["GovTalkDetails"]["GovTalkErrors"]
-            errors = errors.values.flatten
-            messages = errors.map { |e| "(#{e['Number']}) #{e['Text']}" }
-            raise APIError.new(messages.join(" | "), env[:status], env)
-          end
-
+          check_for_errors(env)
           response_values(env)
         end
       end
 
       def response_values(env)
         { status: env[:status], headers: env[:headers], body: env[:body] }
+      end
+
+      def check_for_errors(env)
+        body = env[:body]["GovTalkMessage"]
+        unless body && body["GovTalkDetails"]
+          raise InvalidResponseError.new(env[:body], env[:status], env)
+        end
+
+        if body["GovTalkDetails"]["GovTalkErrors"]
+          error = body["GovTalkDetails"]["GovTalkErrors"].values.flatten.first
+          raise APIError.new(error['Text'], error['Number'], env[:status], env)
+        end
       end
     end
 
