@@ -1,3 +1,7 @@
+## 0.3.7 - April 7, 2014
+
+- Catch Faraday errors without a response
+
 ## 0.3.6 - March 3, 2014
 
 - Add error_code attribute to APIError
