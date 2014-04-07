@@ -19,8 +19,8 @@ module CompaniesHouseGateway
       end
       @config[:raw] ? response : response.body
     rescue Faraday::Error::ClientError => e
-      raise CompaniesHouseGatewayError.new(e.response[:body],
-                                           e.response[:status],
+      raise CompaniesHouseGatewayError.new(e.response.fetch(:body, nil),
+                                           e.response.fetch(:status, nil),
                                            e.response)
     end
 
