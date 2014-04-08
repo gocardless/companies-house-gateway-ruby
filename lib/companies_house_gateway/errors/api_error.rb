@@ -2,7 +2,7 @@ module CompaniesHouseGateway
   class APIError < CompaniesHouseGatewayError
     attr_accessor :error_code
 
-    def initialize(message, error_code=nil, status=nil, response_body=nil)
+    def initialize(message=nil, error_code=nil, status=nil, response_body=nil)
       super(message, status, response_body)
       @error_code = error_code
     end
