@@ -1,3 +1,7 @@
+## 0.3.9 - April 15, 2014
+
+- Catch Faraday errors without a response
+
 ## 0.3.8 - April 8, 2014
 
 - Allow API errors without a message
