@@ -65,4 +65,5 @@ CompaniesHouseGateway.config[:cache] = Rails.cache
 CompaniesHouseGateway.config[:cache_args] = { expires_in: 10.minutes }
 ```
 
+[![Gem Version](https://badge.fury.io/rb/companies-house-gateway.svg)](http://badge.fury.io/rb/companies-house-gateway)
 [![Build Status](https://travis-ci.org/gocardless/companies-house-gateway-ruby.svg?branch=master)](https://travis-ci.org/gocardless/companies-house-gateway-ruby)
