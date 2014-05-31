@@ -64,3 +64,5 @@ If you'd like to cache your requests, you can configure the gem:
 CompaniesHouseGateway.config[:cache] = Rails.cache
 CompaniesHouseGateway.config[:cache_args] = { expires_in: 10.minutes }
 ```
+
+[![Build Status](https://travis-ci.org/gocardless/companies-house-gateway-ruby.svg?branch=master)](https://travis-ci.org/gocardless/companies-house-gateway-ruby)
