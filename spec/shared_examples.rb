@@ -35,7 +35,7 @@ shared_examples 'it generates valid xml' do
   let(:xsd) { Nokogiri::XML::Schema.from_document(xsd_doc) }
 
   it "generates a valid XML request" do
-    xsd.validate(request_xml).should == []
+    expect(xsd.validate(request_xml)).to eq([])
   end
 end
 
@@ -51,7 +51,7 @@ shared_examples 'it returns only the body of the response' do
   before { stub_request(:post, config[:api_endpoint]).to_return(response) }
   subject { described_class.new(client).perform(check_data) }
 
-  it { should be_a Hash }
-  it { should_not be_empty }
-  it { should_not include klass }
+  it { is_expected.to be_a Hash }
+  it { is_expected.not_to be_empty }
+  it { is_expected.not_to include klass }
 end

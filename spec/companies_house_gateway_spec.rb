@@ -5,8 +5,8 @@ shared_examples "it delegates to the client" do |method_name|
   let(:data) { "data" }
 
   it "delegates #{method_name} to the client" do
-    CompaniesHouseGateway::Client.any_instance.
-      should_receive(method_name).with(data)
+    expect_any_instance_of(CompaniesHouseGateway::Client).
+      to receive(method_name).with(data)
     CompaniesHouseGateway.send(method_name, data)
   end
 end
@@ -21,7 +21,11 @@ describe CompaniesHouseGateway do
         before do
           CompaniesHouseGateway.configure { |config| config[key] = key }
         end
-        its([key]) { should == key }
+
+        describe [key] do
+          subject { super()[key] }
+          it { should == key }
+        end
       end
     end
   end

@@ -25,14 +25,14 @@ describe CompaniesHouseGateway::Request do
     let(:xsd) { Nokogiri::XML::Schema(xml_schema) }
 
     it "generates a valid XML request" do
-      xsd.validate(request_xml).should == []
+      expect(xsd.validate(request_xml)).to eq([])
     end
 
     context "with an email address" do
       before { config[:email] = "grey@gocardless.com" }
 
       it "generates a valid XML request" do
-        xsd.validate(request_xml).should == []
+        expect(xsd.validate(request_xml)).to eq([])
       end
     end
   end
@@ -42,18 +42,22 @@ describe CompaniesHouseGateway::Request do
 
     it "makes a get request" do
       perform_check
-      a_request(:post, config[:api_endpoint]).should have_been_made
+      expect(a_request(:post, config[:api_endpoint])).to have_been_made
     end
 
     context "when the config[:raw] is true" do
       before { config[:raw] = true }
-      it { should be_a Faraday::Response }
-      its(:body) { should be_a String }
+      it { is_expected.to be_a Faraday::Response }
+
+      describe '#body' do
+        subject { super().body }
+        it { should be_a String }
+      end
     end
 
     context "when the config[:raw] is false" do
-      it { should be_a Hash }
-      it { should include "GovTalkMessage" }
+      it { is_expected.to be_a Hash }
+      it { is_expected.to include "GovTalkMessage" }
 
       context "errors" do
         context "500" do
@@ -80,8 +84,8 @@ describe CompaniesHouseGateway::Request do
           it "wraps the error" do
             expect { perform_check }.
               to raise_error CompaniesHouseGateway::APIError do |error|
-                error.error_code.should == "604"
-                error.message.should == "Error text"
+                expect(error.error_code).to eq("604")
+                expect(error.message).to eq("Error text")
               end
           end
         end

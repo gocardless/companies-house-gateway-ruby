@@ -19,7 +19,10 @@ describe CompaniesHouseGateway::Client do
       before { configure_companies_house_gateway }
       subject(:new_client) { CompaniesHouseGateway::Client.new }
 
-      its(:config) { should_not == CompaniesHouseGateway.config }
+      describe '#config' do
+        subject { super().config }
+        it { should_not == CompaniesHouseGateway.config }
+      end
       it "has the attributes of the global config" do
         new_client.config[:sender_id] ==
           CompaniesHouseGateway.config[:sender_id]
@@ -30,7 +33,10 @@ describe CompaniesHouseGateway::Client do
       before { config[:first_name] = "test" }
       subject(:new_client) { CompaniesHouseGateway::Client.new(config) }
 
-      its(:config) { should_not == config }
+      describe '#config' do
+        subject { super().config }
+        it { should_not == config }
+      end
       it "has the attributes of the passed in config" do
         new_client.config[:sender_id] == config[:sender_id]
       end

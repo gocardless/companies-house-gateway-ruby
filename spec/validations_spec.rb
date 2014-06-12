@@ -6,12 +6,12 @@ describe CompaniesHouseGateway::Validations do
 
     context "without a string" do
       let(:string) { nil }
-      it { should == nil }
+      it { is_expected.to eq(nil) }
     end
 
     context "with a short string" do
       let(:string) { "A" * 160 }
-      it { should == string }
+      it { is_expected.to eq(string) }
     end
 
     context "with a long string" do
@@ -28,17 +28,17 @@ describe CompaniesHouseGateway::Validations do
 
     context "without a date" do
       let(:date) { nil }
-      it { should == nil }
+      it { is_expected.to eq(nil) }
     end
 
     context "with a date object" do
       let(:date) { Date.parse("01/01/2000") }
-      it { should == date.strftime("%d/%m/%Y") }
+      it { is_expected.to eq(date.strftime("%d/%m/%Y")) }
     end
 
     context "with a parseable string" do
       let(:date) { "01-01-2000" }
-      it { should == "01/01/2000" }
+      it { is_expected.to eq("01/01/2000") }
     end
 
     context "with a load of rubbish" do
@@ -55,12 +55,12 @@ describe CompaniesHouseGateway::Validations do
 
     context "without a boolean" do
       let(:bool) { nil }
-      it { should == nil }
+      it { is_expected.to eq(nil) }
     end
 
     context "with a boolean" do
       let(:bool) { true }
-      it { should == bool }
+      it { is_expected.to eq(bool) }
     end
 
     context "with a load of rubbish" do
@@ -77,17 +77,17 @@ describe CompaniesHouseGateway::Validations do
 
     context "without a number" do
       let(:number) { nil }
-      it { should == nil }
+      it { is_expected.to eq(nil) }
     end
 
     context "with a number" do
       let(:number) { 9 }
-      it { should == number.to_s }
+      it { is_expected.to eq(number.to_s) }
     end
 
     context "with a string that looks like a number" do
       let(:number) { "91" }
-      it { should == number }
+      it { is_expected.to eq(number) }
     end
 
     context "with a load of rubbish" do
@@ -104,17 +104,17 @@ describe CompaniesHouseGateway::Validations do
 
     context "without a data_set" do
       let(:data_set) { nil }
-      it { should == nil }
+      it { is_expected.to eq(nil) }
     end
 
     context "with a valid symbol" do
       let(:data_set) { :live }
-      it { should == "LIVE" }
+      it { is_expected.to eq("LIVE") }
     end
 
     context "with a valid string" do
       let(:data_set) { "LIVE" }
-      it { should == "LIVE" }
+      it { is_expected.to eq("LIVE") }
     end
 
     context "with a load of rubbish" do
@@ -133,17 +133,17 @@ describe CompaniesHouseGateway::Validations do
 
     context "without an officer_type" do
       let(:officer_type) { nil }
-      it { should == nil }
+      it { is_expected.to eq(nil) }
     end
 
     context "with a valid symbol" do
       let(:officer_type) { :dis }
-      it { should == "DIS" }
+      it { is_expected.to eq("DIS") }
     end
 
     context "with a valid string" do
       let(:officer_type) { "DIS" }
-      it { should == "DIS" }
+      it { is_expected.to eq("DIS") }
     end
 
     context "with a load of rubbish" do
@@ -196,28 +196,28 @@ describe CompaniesHouseGateway::Validations do
       context "allows a company number starting with #{prefix}" do
         prefix = (prefix == '\d\d') ? '07' : prefix
         let(:number) { "#{prefix}112233" }
-        it { should == "#{prefix}112233" }
+        it { is_expected.to eq("#{prefix}112233") }
       end
     end
 
     context "does not 0-pads 8 digit registration numbers" do
       let(:number) { "17495895" }
-      it { should == "17495895" }
+      it { is_expected.to eq("17495895") }
     end
 
     context "0-pads 7 digit registration numbers" do
       let(:number) { "7495895" }
-      it { should == "07495895" }
+      it { is_expected.to eq("07495895") }
     end
 
     context "0-pads 5 digit NI registration numbers" do
       let(:number) { "NI27768" }
-      it { should == "NI027768" }
+      it { is_expected.to eq("NI027768") }
     end
 
     context "does not 0-pads 6 digit NI registration numbers" do
       let(:number) { "NI127768" }
-      it { should == "NI127768" }
+      it { is_expected.to eq("NI127768") }
     end
   end
 end
