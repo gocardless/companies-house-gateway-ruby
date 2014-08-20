@@ -1,8 +1,6 @@
 # Companies House Gateway
 
-Simple Ruby Gem for interacting with the Companies House XML Gateway API. Wraps
-the XML submissions and responses required so you can deal with Ruby hashes
-instead.
+Simple Ruby Gem for interacting with the [Companies House XML Gateway API](http://xmlgw.companieshouse.gov.uk/).
 
 [![Gem Version](https://badge.fury.io/rb/companies-house-gateway.svg)](http://badge.fury.io/rb/companies-house-gateway)
 [![Build Status](https://travis-ci.org/gocardless/companies-house-gateway-ruby.svg?branch=master)](https://travis-ci.org/gocardless/companies-house-gateway-ruby)
