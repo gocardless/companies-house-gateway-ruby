@@ -215,9 +215,14 @@ describe CompaniesHouseGateway::Validations do
       it { is_expected.to eq("NI027768") }
     end
 
-    context "does not 0-pads 6 digit NI registration numbers" do
+    context "does not 0-pad 6 digit NI registration numbers" do
       let(:number) { "NI127768" }
       it { is_expected.to eq("NI127768") }
+    end
+
+    context "upcases prefixes" do
+      let(:number) { "sc127768" }
+      it { is_expected.to eq("SC127768") }
     end
   end
 end

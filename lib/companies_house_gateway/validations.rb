@@ -69,6 +69,7 @@ module CompaniesHouseGateway
     def self.clean_company_number(number)
       return unless number
       number = number.to_s.strip # remove whitespace
+      number = number.upcase # upcase any prefixes
 
       # 0-pad 5 or 7 digit registration number
       if number.match /\A(\D{2})(\d{5})\z/
