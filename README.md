@@ -13,7 +13,7 @@ You don't need this source code unless you want to modify the gem. If you just
 want to use it, you should run:
 
 ```ruby
-gem install companies_house_gateway
+gem install companies-house-gateway
 ````
 
 ### Initialising the gem
