@@ -1,3 +1,8 @@
+## 0.3.12 - June 28, 2015
+
+- Fix autoloading (so you no longer need to `require: "companies_house_gateway"`
+  in your gemfile
+
 ## 0.3.11 - June 28, 2015
 
 - Upcase company numbers whilst cleaning them. Stops lower-case prefixes
