@@ -1,3 +1,8 @@
+## 0.3.11 - June 28, 2015
+
+- Upcase company numbers whilst cleaning them. Stops lower-case prefixes
+  causing errors
+
 ## 0.3.10 - June 3, 2014
 
 - Add support for Faraday 0.9
