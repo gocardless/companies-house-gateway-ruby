@@ -9,7 +9,9 @@ module CompaniesHouseGateway
       cache_args:       nil,
       raw:              false,
       api_endpoint:     "http://xmlgw.companieshouse.gov.uk/v1-0/xmlgw/Gateway",
-      user_agent:       "CompaniesHouseGateway Ruby Gem #{CompaniesHouseGateway::VERSION}".freeze
+      user_agent:       "CompaniesHouseGateway Ruby Gem #{CompaniesHouseGateway::VERSION}".freeze,
+      open_timeout:     1,
+      timeout:          3
     }.freeze
 
     def initialize

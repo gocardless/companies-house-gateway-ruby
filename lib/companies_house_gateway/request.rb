@@ -16,6 +16,8 @@ module CompaniesHouseGateway
       response = @connection.post do |request|
         request.path = @config[:api_endpoint]
         request.body = build_request_xml(request_type, request_data).to_s
+        request.options.open_timeout = @config[:open_timeout]
+        request.options.timeout = @config[:timeout]
       end
       @config[:raw] ? response : response.body
     rescue Faraday::Error::ClientError => e
