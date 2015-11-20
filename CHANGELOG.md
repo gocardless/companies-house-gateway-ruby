@@ -1,3 +1,12 @@
+## 0.4.1 - November 20, 2015
+
+- Add company number prefix for Limited Liability Partnership for Northern
+  Ireland
+
+## 0.4.0 - August 7, 2015
+
+- Add configurable timeouts
+
 ## 0.3.12 - June 28, 2015
 
 - Fix autoloading (so you no longer need to `require: "companies_house_gateway"`

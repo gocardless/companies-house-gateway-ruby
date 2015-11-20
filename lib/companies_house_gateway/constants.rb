@@ -26,7 +26,7 @@ module CompaniesHouseGateway
     # \d\d is the default prefix in regex notation.
     ALLOWED_PREFIXES = %w(AC BR FC GE IP LP OC RC SE ZC
                           SC SA SF SL SZ SP SO SR
-                          NI NA NF NL NZ NP NO NR
+                          NI NA NF NL NZ NP NO NR NC
                           \d\d)
   end
 end
