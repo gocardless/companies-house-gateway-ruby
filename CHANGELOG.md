@@ -1,3 +1,8 @@
+## 0.3.13 - November 20, 2015
+
+- Add company number prefix for Limited Liability Partnership for Northern
+  Ireland
+
 ## 0.3.12 - June 28, 2015
 
 - Fix autoloading (so you no longer need to `require: "companies_house_gateway"`
