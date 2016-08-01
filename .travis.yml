@@ -9,3 +9,5 @@ notifications:
     recipients:
       - grey@gocardless.com
 script: bundle exec rspec spec
+before_install:
+  - gem install bundler

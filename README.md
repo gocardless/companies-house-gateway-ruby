@@ -1,6 +1,10 @@
 # Companies House Gateway
 
 Simple Ruby Gem for interacting with the [Companies House XML Gateway API](http://xmlgw.companieshouse.gov.uk/).
+Note that registration and subscription fees may be required to use this API.
+For a gem to access to the newer JSON-based API (which does not require a
+subscription) consider the gem
+[companies-house-rest](https://github.com/gocardless/companies-house-rest).
 
 [![Gem Version](https://badge.fury.io/rb/companies-house-gateway.svg)](http://badge.fury.io/rb/companies-house-gateway)
 [![Build Status](https://travis-ci.org/gocardless/companies-house-gateway-ruby.svg?branch=master)](https://travis-ci.org/gocardless/companies-house-gateway-ruby)
