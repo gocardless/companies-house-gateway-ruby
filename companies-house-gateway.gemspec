@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency 'nokogiri',            '~> 1.4'
 
   gem.add_development_dependency 'rspec',           '~> 3.0'
-  gem.add_development_dependency 'webmock',         '~> 1.21'
+  gem.add_development_dependency 'webmock',         '~> 3.13'
 
   gem.authors = ['Grey Baker']
   gem.description = %q{Ruby wrapper for the Companies House XML Gateway}
