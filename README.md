@@ -1,3 +1,7 @@
+# This library should be considered unmaintained and deprecated.
+
+
+---- 
 # Companies House Gateway
 
 Simple Ruby Gem for interacting with the [Companies House XML Gateway API](http://xmlgw.companieshouse.gov.uk/).
